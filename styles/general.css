@@ -1,0 +1,18 @@
+:root {
+    --colour1: #FFF;
+    --colour2: #C4DAD2;
+    --colour3: #6A9C89;
+    --colour4: #16423C;
+    --colour5: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto", Arial;
+
+    box-sizing: border-box;
+
+    color: var(--colour1);
+}

@@ -1,9 +1,9 @@
 nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 75px;
+    height: var(--navbar-height);
 
     background-color: var(--colour2);
 
@@ -263,6 +263,7 @@ nav .favourites .favourite-games .game .thumbnail {
     background-color: var(--colour2);
 
     border-radius: 10px;
+    border: none;
 
     overflow: hidden;
 }
@@ -304,7 +305,7 @@ nav .favourites .favourite-games .game .delete i {
 
 @media (max-width: 700px) {
     nav {
-        height: 60px;
+        --navbar-height: 60px;
     }
 
     nav .search {

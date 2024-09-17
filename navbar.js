@@ -68,9 +68,9 @@ function createFavouriteGame(game, gameIdx) {
     favouriteGame.className = "game";                                       
     favouriteGame.id = `game${gameIdx + 1}`
     favouriteGame.innerHTML = `
-        <a class="thumbnail">
+        <button class="thumbnail" onclick="playGame(${href})">
             <img src="${thumb}" alt="Thumbnail">
-        </a>
+        </button>
         <div class="delete" onclick="removeFavouriteGame(${gameIdx})">
             <i class="fa-solid fa-trash"></i>
         </div>

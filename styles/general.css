@@ -4,6 +4,8 @@
     --colour3: #6A9C89;
     --colour4: #16423C;
     --colour5: #000;
+
+    --navbar-height: 75px;
 }
 
 * {
@@ -15,4 +17,8 @@
     box-sizing: border-box;
 
     color: var(--colour1);
+}
+
+body {
+    padding-top: var(--navbar-height);
 }

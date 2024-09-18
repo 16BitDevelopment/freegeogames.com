@@ -120,7 +120,7 @@ function createFavouriteGame(game, gameIdx) {
     let href = "play/" + game;
     if (window.location.href.indexOf("/play") != -1) {
         href = "/" + href;
-        thumb = "/" + thumb;
+        thumb = "../../" + thumb;
     }
 
     const favouriteGame = document.createElement("div");

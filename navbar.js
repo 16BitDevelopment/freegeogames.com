@@ -116,10 +116,11 @@ function updateFavouriteGamesList() {
 }
 
 function createFavouriteGame(game, gameIdx) {
-    const thumb = "/thumbnails/" + game + ".png";
+    let thumb = "thumbnails/" + game + ".png";
     let href = "play/" + game;
     if (window.location.href.indexOf("/play") != -1) {
         href = "/" + href;
+        thumb = "/" + thumb;
     }
 
     const favouriteGame = document.createElement("div");

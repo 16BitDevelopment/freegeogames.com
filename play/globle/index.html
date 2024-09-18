@@ -74,7 +74,7 @@
         </nav>
 
         <main>
-            <div class="game">
+            <div class="game" id="active-game">
                 <iframe src="https://globle-game.com" frameborder="0" scrolling="no" onload="gameLoaded()"></iframe>
                 <div class="load-screen" id="load-screen">
                     <h1>LOADING</h1>
@@ -88,7 +88,7 @@
                     <div class="favourite btn">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <div class="fullscreen btn" onclick="alert(5432)">
+                    <div class="fullscreen btn" onclick="fullscreen()">
                         <i class="fa-solid fa-expand"></i>
                     </div>
                 </div>

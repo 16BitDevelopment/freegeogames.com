@@ -18,12 +18,22 @@ main .game {
 }
 
 main .game.fullscreen {
+    aspect-ratio: unset;
+
     position: absolute;
+    top: 0;
+    bottom: 75px;
     left: 0;
     right: 0;
     scale: 1;
 
+    translate: 0;
+
     z-index: 150;
+}
+
+main .game.fullscreen .game-bottom {
+    border-radius: unset;
 }
 
 main .game iframe {
@@ -79,11 +89,11 @@ main .game .load-screen .dots .dot {
 }
 
 main .game .load-screen .dots .dot:nth-child(2) {
-    animation-delay: 0.25s;
+    animation-delay: -0.25s;
 }
 
 main .game .load-screen .dots .dot:nth-child(3) {
-    animation-delay: 0.5s;
+    animation-delay: -0.5s;
 }
 
 main .game .game-bottom {
@@ -114,6 +124,8 @@ main .game .game-bottom .btn {
     color: var(--colour3);
 
     border-radius: 10px;
+
+    transition: all 0.25s;
 }
 
 main .game .game-bottom .btn i {

@@ -21,6 +21,11 @@ function openTab(tab, btn) {
     if (document.getElementById(tab).classList.contains("show")) {
         blackOverlay.classList.add("show");
     }
+
+    blackOverlay.addEventListener("click", function() {
+        document.getElementById(tab).classList.remove("show");
+        blackOverlay.classList.remove("show");
+    });
 }
 
 function closeTab(tab) {
@@ -32,26 +37,67 @@ function closeTab(tab) {
 //favourite games
 
 const favouriteGamesList = document.getElementById("favourite-games");
+const favouriteBtn = document.getElementById("favourite-btn") || null;
 
 let allFavouriteGames = getFavouriteGames();
 updateFavouriteGamesList();
 
-function addFavouriteGame(thumb, href) {
-    const favouriteGameObj = {
-        thumbnail: thumb,
-        link: href
-    };
-    allFavouriteGames.unshift(favouriteGameObj);
+const favouriteBtnHref = favouriteBtn.getAttribute("data-href");
+
+updateFavouriteBtn();
+
+function addFavouriteGame() {
+    if (favouriteBtn.children[0].classList.contains("fa-solid")) {
+
+        favouriteBtn.children[0].classList.remove("fa-solid");
+        favouriteBtn.children[0].classList.add("fa-regular");
+
+        removeFavouriteGame(isFavouriteGame(favouriteBtnHref));
+
+        document.getElementById("favourites-notification").classList.remove("new");  
+
+        return;
+    }
+
+    favouriteBtn.children[0].classList.remove("fa-regular");
+    favouriteBtn.children[0].classList.add("fa-solid");
+
+    const favouriteGame = favouriteBtnHref;
+    allFavouriteGames.unshift(favouriteGame);
     updateFavouriteGamesList();
     saveFavouriteGames();
 
-    document.getElementById("favourites-notification").classList.add("new");
+    document.getElementById("favourites-notification").classList.add("new");    
+}
+
+function isFavouriteGame(href) {
+    let id;
+
+    allFavouriteGames.forEach((game, gameIdx) => {
+        if (game == href) {
+            id = gameIdx;
+        }
+    });
+
+    return id;
+}
+
+function updateFavouriteBtn() {
+    favouriteBtn.children[0].classList.remove("fa-regular");
+    favouriteBtn.children[0].classList.remove("fa-solid");
+
+    if (isFavouriteGame(favouriteBtnHref) != undefined) {
+        favouriteBtn.children[0].classList.add("fa-solid");
+    } else {
+        favouriteBtn.children[0].classList.add("fa-regular");
+    }
 }
 
 function removeFavouriteGame(id) {
     allFavouriteGames = allFavouriteGames.filter((_, i) => i !== id);
     saveFavouriteGames();
     updateFavouriteGamesList();
+    updateFavouriteBtn();
 }
 
 function updateFavouriteGamesList() {
@@ -63,15 +109,15 @@ function updateFavouriteGamesList() {
     `;
     favouriteGamesList.classList.add("empty");
 
-   allFavouriteGames.forEach((game, gameIdx) => {
+    allFavouriteGames.forEach((game, gameIdx) => {
         favouriteGamesList.append(createFavouriteGame(game, gameIdx));
         favouriteGamesList.classList.remove("empty");
     });
 }
 
 function createFavouriteGame(game, gameIdx) {
-    const thumb = "/thumbnails/" + game.thumbnail;
-    let href = "play/" + game.link;
+    const thumb = "/thumbnails/" + game + ".png";
+    let href = "play/" + game;
     if (window.location.href.indexOf("/play") != -1) {
         href = "/" + href;
     }

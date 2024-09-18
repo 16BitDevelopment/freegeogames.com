@@ -15,6 +15,8 @@ main .game {
     background-color: var(--colour1);
 
     position: relative;
+
+    transition: all 0.5s;
 }
 
 main .game.fullscreen {
@@ -32,6 +34,8 @@ main .game.fullscreen {
     z-index: 150;
 }
 
+main .game.fullscreen iframe,
+main .game.fullscreen .load-screen,
 main .game.fullscreen .game-bottom {
     border-radius: unset;
 }
@@ -103,13 +107,15 @@ main .game .game-bottom {
     right: 0;
     height: 75px;
 
-    padding: 10px;
+    padding: 10px 15px;
 
     background-color: var(--colour2);
 
     border-radius: 0 0 10px 10px;
 
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 main .game .game-bottom .btn {
@@ -125,6 +131,8 @@ main .game .game-bottom .btn {
 
     border-radius: 10px;
 
+    cursor: pointer;
+
     transition: all 0.25s;
 }
 
@@ -136,10 +144,6 @@ main .game .game-bottom .btn i {
 main .game .game-bottom .btn:hover {
     background-color: var(--colour3);
     color: var(--colour2);
-}
-
-main .game .game-bottom .fullscreen.btn {
-    margin-left: auto;
 }
 
 @keyframes dot-bounce {

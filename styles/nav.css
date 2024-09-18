@@ -36,6 +36,8 @@ nav .black-overlay {
 
 nav .black-overlay.show {
     opacity: 0.5;
+
+    pointer-events: all;
 }
 
 nav .logo {
@@ -131,6 +133,8 @@ nav .nav-buttons > * {
     color: var(--colour3);
     font-size: 23px;
 
+    cursor: pointer;
+
     transition: all 0.25s;
 }
 
@@ -211,6 +215,8 @@ nav .box .box-header i {
     border-radius: 10px;
 
     padding: 10px 13px;
+
+    cursor: pointer;
 
     transition: all 0.25s;
 }
@@ -301,9 +307,13 @@ nav .favourites .favourite-games .game .thumbnail img:hover {
 
 nav .favourites .favourite-games .game .delete {
     padding: 11px 13px;
+
     border: 2px solid var(--colour2);
     border-radius: 10px;
+    
     color: var(--colour2);
+
+    cursor: pointer;
 
     transition: all 0.25s;
 }

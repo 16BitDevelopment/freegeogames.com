@@ -29,6 +29,8 @@ nav .black-overlay {
 
     opacity: 0;
 
+    pointer-events: none;
+
     transition: all 0.25s;
 }
 

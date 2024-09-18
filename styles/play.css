@@ -51,6 +51,8 @@ main .game .load-screen {
 
     z-index: 50;
 
+    pointer-events: none;
+
     transition: all 0.5s;
 }
 

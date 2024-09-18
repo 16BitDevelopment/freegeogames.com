@@ -15,7 +15,25 @@ nav {
 
     border-bottom: 2px solid var(--colour3);
 
-    z-index: 999;
+    z-index: 100;
+}
+
+nav .black-overlay {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: var(--colour5);
+
+    opacity: 0;
+
+    transition: all 0.25s;
+}
+
+nav .black-overlay.show {
+    opacity: 0.5;
 }
 
 nav .logo {
@@ -29,7 +47,7 @@ nav .logo img {
 nav .search {
     background-color: transparent;
     border: 2px solid var(--colour3);
-    border-radius: 9999px;
+    border-radius: 10px;
     padding: 10px 16px;
 
     width: 400px;
@@ -82,7 +100,7 @@ nav .nav-buttons .notification-dot {
     background-color: var(--colour3);
 
     border: 3px solid var(--colour2);
-    border-radius: 9999px;
+    border-radius: 10px;
 
     opacity: 0;
 
@@ -102,7 +120,7 @@ nav .nav-buttons > * {
     background-color: transparent;
 
     border: 2px solid var(--colour3);
-    border-radius: 9999px;
+    border-radius: 10px;
 
     display: flex;
     align-items: center;
@@ -188,7 +206,7 @@ nav .box .box-header i {
     color: var(--colour3);
 
     border: 2px solid var(--colour3);
-    border-radius: 9999px;
+    border-radius: 10px;
 
     padding: 10px 13px;
 
@@ -282,7 +300,7 @@ nav .favourites .favourite-games .game .thumbnail img:hover {
 nav .favourites .favourite-games .game .delete {
     padding: 11px 13px;
     border: 2px solid var(--colour2);
-    border-radius: 9999px;
+    border-radius: 10px;
     color: var(--colour2);
 
     transition: all 0.25s;

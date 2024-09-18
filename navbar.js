@@ -1,6 +1,7 @@
 // tabs
 
 const navTabs = document.getElementsByClassName("box");
+const blackOverlay = document.getElementById("black-overlay");
 
 function openTab(tab, btn) {
     const tabActive = document.getElementById(tab).classList.contains("show");
@@ -14,10 +15,18 @@ function openTab(tab, btn) {
     }
 
     btn.children[1].classList.remove("new");
+
+    blackOverlay.classList.remove("show");
+
+    if (document.getElementById(tab).classList.contains("show")) {
+        blackOverlay.classList.add("show");
+    }
 }
 
 function closeTab(tab) {
     document.getElementById(tab).classList.remove("show");
+
+    blackOverlay.classList.remove("show");
 }
 
 //favourite games
@@ -61,16 +70,19 @@ function updateFavouriteGamesList() {
 }
 
 function createFavouriteGame(game, gameIdx) {
-    const thumb = game.thumbnail;
-    const href = game.link;
+    const thumb = "/thumbnails/" + game.thumbnail;
+    let href = "play/" + game.link;
+    if (window.location.href.indexOf("/play") != -1) {
+        href = "/" + href;
+    }
 
     const favouriteGame = document.createElement("div");
     favouriteGame.className = "game";                                       
     favouriteGame.id = `game${gameIdx + 1}`
     favouriteGame.innerHTML = `
-        <button class="thumbnail" onclick="playGame(${href})">
+        <a class="thumbnail" href="${href}">
             <img src="${thumb}" alt="Thumbnail">
-        </button>
+        </a>
         <div class="delete" onclick="removeFavouriteGame(${gameIdx})">
             <i class="fa-solid fa-trash"></i>
         </div>

@@ -20,5 +20,7 @@
 }
 
 body {
-    padding-top: var(--navbar-height);
+    padding-top: calc(var(--navbar-height) + 25px);
+    padding-left: 25px;
+    padding-right: 25px;
 }

@@ -1,0 +1,139 @@
+main {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+}
+
+main .game {
+    width: 100%;
+    aspect-ratio: 16/9;
+
+    scale: 0.75;
+    translate: -12.5% -12.5%;
+
+    background-color: var(--colour1);
+
+    position: relative;
+}
+
+main .game.fullscreen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    scale: 1;
+
+    z-index: 150;
+}
+
+main .game iframe {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 20px 20px 0 0;
+}
+
+main .game .load-screen {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--colour3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+
+    border-radius: 20px 20px 0 0;
+
+    z-index: 50;
+
+    transition: all 0.5s;
+}
+
+main .game .load-screen.loaded {
+    opacity: 0;
+}
+
+main .game .load-screen h1 {
+    color: var(--colour2);
+}
+
+main .game .load-screen .dots {
+    display: flex;
+    gap: 20px;
+}
+
+main .game .load-screen .dots .dot {
+    height: 20px;
+    aspect-ratio: 1;
+    background-color: var(--colour2);
+    border-radius: 9999px;
+
+    animation: dot-bounce 1.25s ease-in-out infinite forwards;
+}
+
+main .game .load-screen .dots .dot:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+main .game .load-screen .dots .dot:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+main .game .game-bottom {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 75px;
+
+    padding: 10px;
+
+    background-color: var(--colour2);
+
+    border-radius: 0 0 10px 10px;
+
+    display: flex;
+}
+
+main .game .game-bottom .btn {
+    height: 100%;
+    aspect-ratio: 1;
+    border: 2px solid var(--colour3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--colour3);
+
+    border-radius: 10px;
+}
+
+main .game .game-bottom .btn i {
+    color: inherit;
+    font-size: 25px;
+}
+
+main .game .game-bottom .btn:hover {
+    background-color: var(--colour3);
+    color: var(--colour2);
+}
+
+main .game .game-bottom .fullscreen.btn {
+    margin-left: auto;
+}
+
+@keyframes dot-bounce {
+    from, to {
+        translate: 0;
+    }
+
+    50% {
+        translate: 0 -50px;
+    }
+}

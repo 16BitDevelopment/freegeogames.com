@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Home</title>
+        <title>Free Geo Games</title>
 
         <script src="https://kit.fontawesome.com/9055024f82.js" crossorigin="anonymous"></script>
 
@@ -19,8 +19,8 @@
         <script src="navbar.js" defer></script>
     </head>
     <body>
+        <input type="checkbox" id="hamburger-toggle">
         <nav>
-            <input type="checkbox" id="hamburger-toggle">
             <div class="black-overlay" id="black-overlay"></div>
             <div class="logo">
                 <a href="/">
@@ -40,7 +40,8 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-            <div class="nav-buttons">
+            <div class="search-results"></div>
+            <div class="nav-buttons" id="nav-btns">
                 <div class="favourites-btn" onclick="openTab('favourites', this)">
                     <i class="fa-regular fa-heart"></i>
                     <div class="notification-dot" id="favourites-notification"></div>

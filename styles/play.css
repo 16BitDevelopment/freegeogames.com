@@ -32,7 +32,7 @@ main .game {
 main .game.fullscreen {
     aspect-ratio: unset;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: var(--game-bottom-height);
     left: 0;
@@ -187,12 +187,57 @@ main .description p {
     font-size: 1.2em;
 }
 
-.other-games {
+main .description h2 {
+    font-size: 1.75em;
+    margin: 10px 0;
+}
+
+main .description a {
+    font-size: 1.2em;
+    text-decoration: none;
+
+    position: relative;
+
+    font-weight: 500;
+}
+
+main .description a:hover::after {
     width: 100%;
 }
 
+main .description a::after {
+    content: attr(data-creator);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+
+    text-wrap: nowrap;
+    overflow: hidden;
+
+    color: var(--colour3);
+
+    transition: all 0.75s;
+}
+
+h1.subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3rem;
+}
+
+.other-games {
+    width: 100%;
+
+    display: flex;
+    justify-content:  center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
 .other-games .game {
-    height: 175px;
+    height: 150px;
     aspect-ratio: 16 / 9;
 
     padding: 10px;
@@ -204,6 +249,11 @@ main .description p {
     position: relative;
 
     overflow: hidden;
+
+    box-shadow: -10px -10px 25px rgba(255, 255, 255, 0.15),
+    10px 10px 25px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.25s;
 }
 
 .other-games .game .thumb {
@@ -250,6 +300,11 @@ main .description p {
     transition: all 0.25s;
 }
 
+.other-games .game:hover {
+    box-shadow: -10px -10px 50px rgba(0, 0, 0, 0.3),
+    10px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
 .other-games .game:hover .text {
     opacity: 1;
 }
@@ -282,9 +337,15 @@ main .description p {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     main .description {
         font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 900px) {
+    main .description {
+        font-size: 0.5rem;
     }
 }
 
@@ -312,6 +373,7 @@ main .description p {
 @media (max-width: 400px) {
     main .game .load-screen.loaded {
         opacity: 1;
+        pointer-events: all;
     }
 
     main .game .load-screen.loaded h1,

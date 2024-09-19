@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Home</title>
+        <title>Globle | Free Geo Games</title>
 
         <script src="https://kit.fontawesome.com/9055024f82.js" crossorigin="anonymous"></script>
 
@@ -22,18 +22,13 @@
         <script src="../../games.js" defer></script>
     </head>
     <body>
+        <input type="checkbox" id="hamburger-toggle">
         <nav>
-            <input type="checkbox" id="hamburger-toggle">
             <div class="black-overlay" id="black-overlay"></div>
             <div class="logo">
                 <a href="../../">
                     <img src="../../Logo.png" alt="Logo">
                 </a>
-            </div>
-            <div class="hamburger">
-                <label for="hamburger-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </label>
             </div>
             <div class="search" id="search-bar">
                 <div class="search-bar">
@@ -41,6 +36,23 @@
                 </div>
                 <div class="search-icon">
                     <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="search-results">
+                    <div class="search-contents active result">
+                        <div class="no-results">
+                            <h1>No Results</h1>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <a class="game" href="#">
+                            <div class="thumb">
+                                <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                            </div>
+                            <div class="text">
+                                <h1>Globle</h1>
+                                <p>&#183; In Favourites</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="nav-buttons" id="nav-btns">
@@ -52,6 +64,14 @@
                     <i class="fa-regular fa-bell"></i>
                     <div class="notification-dot" id="notifications-notification"></div>
                 </div>
+            </div>
+            <div class="hamburger">
+                <label for="hamburger-toggle" class="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <label for="hamburger-toggle" class="x-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
             </div>
             <div class="favourites box" id="favourites">
                 <div class="box-header">
@@ -76,7 +96,7 @@
 
         <main>
             <div class="game" id="active-game">
-                <iframe src="https://globle-game.com" frameborder="0" scrolling="no" onload="gameLoaded()"></iframe>
+                <iframe id="game" src="https://globle-game.com" frameborder="0" onload="gameLoaded()"></iframe>
                 <div class="load-screen" id="load-screen">
                     <h1>LOADING</h1>
                     <div class="dots">
@@ -98,11 +118,14 @@
             </div>
             <div class="description">
                 <h1>Globle</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum asperiores qui iste mollitia totam suscipit adipisci est culpa assumenda numquam, temporibus ipsam cumque! Laboriosam reprehenderit ipsum aperiam, nostrum et eaque.</p>
+                <p>Globle is an engaging geography guessing game that challenges players to identify a mystery country based on their proximity to it. Each day, players make guesses and receive hints indicating how close their guesses are to the target country, with colors signifying distance. The goal is to discover the mystery country in as few guesses as possible, making it both fun and educational. Test your geographical knowledge and see how quickly you can pinpoint the location!</p>
+                <h2>Creator:</h2>
+                <a href="https://trainwrecklabs.com" target="_blank" data-creator="Trainwreck Labs">Trainwreck Labs</a>
             </div>
         </main>
+        <h1 class="subtitle">Other Games</h1>
         <div class="other-games" id="load-games">
-            <div class="game">
+            <!--<div class="game">
                 <div class="thumb">
                     <a href="../globle/">
                         <img src="../../thumbnails/globle.png" alt="Thumbnail">
@@ -111,7 +134,7 @@
                 <div class="text">
                     <h1>Globle</h1>
                 </div>
-            </div>
+            </div>-->
         </div>
     </body>
 </html>

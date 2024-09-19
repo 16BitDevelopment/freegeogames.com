@@ -2,6 +2,7 @@
 
 const navTabs = document.getElementsByClassName("box");
 const blackOverlay = document.getElementById("black-overlay");
+const navBtns = document.getElementById("nav-btns");
 
 function openTab(tab, btn) {
     const tabActive = document.getElementById(tab).classList.contains("show");
@@ -14,17 +15,30 @@ function openTab(tab, btn) {
         document.getElementById(tab).classList.toggle("show");
     }
 
+    Array.from(navBtns.children).forEach(el => {
+        el.children[0].classList.remove("fa-solid");
+        el.children[0].classList.add("fa-regular");
+    });
+
     btn.children[1].classList.remove("new");
 
     blackOverlay.classList.remove("show");
 
     if (document.getElementById(tab).classList.contains("show")) {
         blackOverlay.classList.add("show");
+
+        btn.children[0].classList.toggle("fa-regular");
+        btn.children[0].classList.toggle("fa-solid");
     }
 
     blackOverlay.addEventListener("click", function() {
         document.getElementById(tab).classList.remove("show");
         blackOverlay.classList.remove("show");
+
+        Array.from(navBtns.children).forEach(el => {
+            el.children[0].classList.remove("fa-solid");
+            el.children[0].classList.add("fa-regular");
+        });
     });
 }
 
@@ -32,6 +46,11 @@ function closeTab(tab) {
     document.getElementById(tab).classList.remove("show");
 
     blackOverlay.classList.remove("show");
+
+    Array.from(navBtns.children).forEach(el => {
+        el.children[0].classList.remove("fa-solid");
+        el.children[0].classList.add("fa-regular");
+    });
 }
 
 //favourite games

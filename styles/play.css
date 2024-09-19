@@ -14,6 +14,13 @@ main .game {
 
     background-color: var(--colour1);
 
+    border-radius: 20px 20px 0 0;
+
+
+    --game-bottom-height: 75px;
+
+    font-size: 25px;
+
     position: relative;
 
     transition: all 0.5s;
@@ -24,7 +31,7 @@ main .game.fullscreen {
 
     position: absolute;
     top: 0;
-    bottom: 75px;
+    bottom: var(--game-bottom-height);
     left: 0;
     right: 0;
     scale: 1;
@@ -65,13 +72,12 @@ main .game .load-screen {
 
     z-index: 50;
 
-    pointer-events: none;
-
     transition: all 0.5s;
 }
 
 main .game .load-screen.loaded {
     opacity: 0;
+    pointer-events: none;
 }
 
 main .game .load-screen h1 {
@@ -81,6 +87,10 @@ main .game .load-screen h1 {
 main .game .load-screen .dots {
     display: flex;
     gap: 20px;
+}
+
+main .game .load-screen .rotate {
+    display: none;
 }
 
 main .game .load-screen .dots .dot {
@@ -105,7 +115,7 @@ main .game .game-bottom {
     top: 100%;
     left: 0;
     right: 0;
-    height: 75px;
+    height: var(--game-bottom-height);
 
     padding: 10px 15px;
 
@@ -138,7 +148,7 @@ main .game .game-bottom .btn {
 
 main .game .game-bottom .btn i {
     color: inherit;
-    font-size: 25px;
+    font-size: inherit;
 }
 
 main .game .game-bottom .btn:hover {
@@ -153,5 +163,44 @@ main .game .game-bottom .btn:hover {
 
     50% {
         translate: 0 -50px;
+    }
+}
+
+@keyframes rotate-phone {
+    from {
+        transform: rotateZ(90deg);
+    }
+
+    25% {
+        transform: rotateZ(90deg);
+    }
+
+    75% {
+        transform: rotateZ(180);
+    }
+}
+
+@media (max-width: 700px) {
+    main .game {
+        --game-bottom-height: 50px;
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    main .game .load-screen.loaded {
+        opacity: 1;
+    }
+
+    main .game .load-screen.loaded h1,
+    main .game .load-screen.loaded .dots {
+        display: none;
+    }
+
+    main .game .load-screen.loaded .rotate {
+        width: 50%;
+        display: block;
+
+        animation: rotate-phone 2s infinite;
     }
 }

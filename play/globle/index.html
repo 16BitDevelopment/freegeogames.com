@@ -23,7 +23,7 @@
     <body>
         <nav>
             <input type="checkbox" id="hamburger-toggle">
-            <div class="black-overlay" id="black-overlay"></div>
+            <div class="black-overlay" id="black-overlay" onclick="closeTab()"></div>
             <div class="logo">
                 <a href="../../">
                     <img src="../../Logo.png" alt="Logo">
@@ -42,7 +42,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-            <div class="nav-buttons">
+            <div class="nav-buttons" id="nav-btns">
                 <div class="favourites-btn" onclick="openTab('favourites', this)">
                     <i class="fa-regular fa-heart"></i>
                     <div class="notification-dot" id="favourites-notification"></div>
@@ -83,6 +83,7 @@
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
+                    <img src="../../images/rotate-phone.png" alt="Rotate Phone" class="rotate">
                 </div>
                 <div class="game-bottom">
                     <div class="favourite btn" id="favourite-btn" data-href="globle"  onclick="addFavouriteGame()">

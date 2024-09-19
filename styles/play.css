@@ -23,6 +23,9 @@ main .game {
 
     position: relative;
 
+    box-shadow: -10px -10px 25px rgba(255, 255, 255, 0.15),
+    10px 10px 25px rgba(0, 0, 0, 0.25);
+
     transition: all 0.5s;
 }
 
@@ -156,6 +159,105 @@ main .game .game-bottom .btn:hover {
     color: var(--colour2);
 }
 
+main .description {
+    background-color: var(--colour2);
+    position: absolute;
+    top: clac(var(--navbar-height) + 25px);
+    right: 25px;
+    width: calc(25% - 40px);
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    box-shadow: -10px -10px 25px rgba(255, 255, 255, 0.15),
+    10px 10px 25px rgba(0, 0, 0, 0.25);
+
+    font-size: 1rem;
+
+    margin-bottom: 50px;
+}
+
+main .description h1 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+}
+
+main .description p {
+    font-size: 1.2em;
+}
+
+.other-games {
+    width: 100%;
+}
+
+.other-games .game {
+    height: 175px;
+    aspect-ratio: 16 / 9;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background-color: var(--colour2);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.other-games .game .thumb {
+    height: 100%;
+    width: 100%;
+    
+    overflow: hidden;
+
+    border-radius: 10px;
+}
+
+.other-games .game .thumb img {
+    height: 100%;
+    width: 100%;
+}
+
+.other-games .game .text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    text-align: center;
+
+    background-color: #00000080;
+
+    pointer-events: none;
+
+    opacity: 0;
+    
+    transition: all 0.25s;
+}
+
+.other-games .game .text h1 {
+    translate: 0 10px;
+
+    text-transform: uppercase;
+
+    transition: all 0.25s;
+}
+
+.other-games .game:hover .text {
+    opacity: 1;
+}
+
+.other-games .game:hover .text h1 {
+    translate: 0;
+}
+
 @keyframes dot-bounce {
     from, to {
         translate: 0;
@@ -177,6 +279,26 @@ main .game .game-bottom .btn:hover {
 
     75% {
         transform: rotateZ(180);
+    }
+}
+
+@media (max-width: 1000px) {
+    main .description {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 850px) {
+    main {
+        display: block;
+    }
+    main .game {
+        translate: 0 -12.5%;
+    }
+    main .description {
+        position: static;
+        width: 100%;
+        font-size: 0.85rem;
     }
 }
 

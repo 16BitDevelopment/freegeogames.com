@@ -60,6 +60,8 @@ nav .search {
     align-items: center;
     justify-content: center;
 
+    pointer-events: none;
+
     transition: opacity 0.5s;
 }
 
@@ -86,6 +88,8 @@ nav .search .search-bar input {
     width: calc(100% - 10px);
 
     outline: none;
+
+    pointer-events: all;
 }
 
 nav .search .search-bar input::placeholder {
@@ -104,9 +108,12 @@ nav .search-results {
     top: calc(var(--navbar-height) + 20px);
     left: 0;
     width: 100%;
+    max-height: 300px;
 
     display: flex;
     justify-content: center;
+
+    pointer-events: none;
 }
 
 nav .search-results .search-contents {
@@ -119,6 +126,11 @@ nav .search-results .search-contents {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    scrollbar-width: none;
+    overflow: scroll;
+
+    pointer-events: all;
 
     opacity: 0;
 
@@ -156,7 +168,7 @@ nav .search-results .search-contents .no-results i {
 
 nav .search-results .search-contents .game {
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     padding: 8px;
 
     border-radius: 10px;
@@ -177,6 +189,7 @@ nav .search-results .search-contents .game .thumb {
 
 nav .search-results .search-contents .game .thumb img {
     height: 100%;
+    object-fit: cover;
 
     transition: all 0.25s;
 }
@@ -348,7 +361,7 @@ nav .list {
     flex-direction: column;
     gap: 10px;
 
-    overflow-y: auto;
+    overflow-y: scroll;
     scrollbar-width: none;
 }
 
@@ -457,12 +470,25 @@ nav .favourites .favourite-games .game .delete i {
 }
 
 #hamburger-toggle:checked ~ nav .search {
-    display: flex;
-    width: 300px;
-    padding: 20px 16px;
-    margin: unset;
-    border: 2px solid var(--colour3);
+    top: var(--navbar-height);
+    height: var(--navbar-height);
+    padding: 0 10px;
+}
+
+#hamburger-toggle:checked ~ nav .search .search-bar {
     opacity: 1;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    border: 2px solid var(--colour3);
+    padding: 0 10px;
+}
+
+#hamburger-toggle:checked ~ nav .search-results {
+    top: calc(2 * var(--navbar-height) + 10px);
+    max-height: calc(100vh - 2 * var(--navbar-height) - 90px);
+    padding: 0 10px;
 }
 
 #hamburger-toggle:checked ~ nav .nav-buttons {
@@ -495,32 +521,12 @@ nav .hamburger i {
 }
 
 @media (max-width: 1000px) {
-    nav .search .search-bar {
-        width: 250px;
-        margin-left: 125px;
-    }
-
-    nav .search-results .search-contents {
-        width: 250px;
-        margin-left: 125px;
-    }
-
-    nav .search-results .search-contents .game {
-        height: 85px;
-    }
-
-    nav .search-results .search-contents .game .text {
-        font-size: 0.45rem;
-    }
-}
-
-@media (max-width: 700px) {
     nav {
         --navbar-height: 60px;
         bottom: calc(100vh - var(--navbar-height));
     }
 
-    nav .search {
+    nav .search .search-bar {
         width: 0;
         height: 0;
         padding: 0;
@@ -530,6 +536,19 @@ nav .hamburger i {
         opacity: 0;
 
         transition: opacity 0.5s ;
+    }
+
+    nav .search-results .search-contents {
+        margin: 0;
+        width: 100%;
+    }
+
+    nav .search-results .search-contents .game {
+        min-height: 110px;
+    }
+
+    nav .search-results .search-contents .game .text {
+        font-size: 0.9rem;
     }
 
     nav .nav-buttons {

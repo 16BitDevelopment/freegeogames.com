@@ -1,4 +1,4 @@
-let games = ["hello", "tradle", "hi", "globle"];
+let games = ["hello", "tradle", "hi", "globle", "hey", "ha", "haha", "hahaha", "he", "heh"];
 
 // load games
 
@@ -53,8 +53,21 @@ searchBar.addEventListener("input", (evt) => {
     if (searchBar.value == "") {
         searchResults.classList.remove("active");
 
+        blackOverlay.classList.remove("show");
+
         return;
     }
+
+    for (let i = 0; i < navTabs.length; i += 1) {
+        navTabs[i].classList.remove("show");
+    }
+
+    Array.from(navBtns.children).forEach(el => {
+        el.children[0].classList.remove("fa-solid");
+        el.children[0].classList.add("fa-regular");
+    });
+
+    blackOverlay.classList.add("show");
 
     searchResultsList = searchGames(searchBar.value.toLowerCase());
     createSearchResults(searchResultsList);

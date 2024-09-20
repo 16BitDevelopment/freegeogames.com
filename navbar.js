@@ -3,8 +3,41 @@
 const navTabs = document.getElementsByClassName("box");
 const blackOverlay = document.getElementById("black-overlay");
 const navBtns = document.getElementById("nav-btns");
+const hamburger = document.getElementById("hamburger-toggle");
+
+blackOverlay.addEventListener("click", function() {
+    for (let i = 0; i < navTabs.length; i += 1) {
+        navTabs[i].classList.remove("show");
+    }
+    blackOverlay.classList.remove("show");
+
+    Array.from(navBtns.children).forEach(el => {
+        el.children[0].classList.remove("fa-solid");
+        el.children[0].classList.add("fa-regular");
+    });
+
+    searchResults.classList.remove("active");
+});
+
+hamburger.addEventListener("click", () => {
+    if (!hamburger.checked) {
+        searchResults.classList.remove("active");
+        searchResults.classList.remove("result");
+        blackOverlay.classList.remove("show");
+
+        for (let i = 0; i < navTabs.length; i += 1) {
+            navTabs[i].classList.remove("show");
+        }
+
+        Array.from(navBtns.children).forEach(el => {
+            el.children[0].classList.remove("fa-solid");
+            el.children[0].classList.add("fa-regular");
+        });
+    }
+});
 
 function openTab(tab, btn) {
+    searchResults.classList.remove("active");
     const tabActive = document.getElementById(tab).classList.contains("show");
 
     for (let i = 0; i < navTabs.length; i += 1) {
@@ -30,16 +63,6 @@ function openTab(tab, btn) {
         btn.children[0].classList.toggle("fa-regular");
         btn.children[0].classList.toggle("fa-solid");
     }
-
-    blackOverlay.addEventListener("click", function() {
-        document.getElementById(tab).classList.remove("show");
-        blackOverlay.classList.remove("show");
-
-        Array.from(navBtns.children).forEach(el => {
-            el.children[0].classList.remove("fa-solid");
-            el.children[0].classList.add("fa-regular");
-        });
-    });
 }
 
 function closeTab(tab) {

@@ -50,24 +50,32 @@ nav .logo img {
 }
 
 nav .search {
-    background-color: transparent;
-    border: 2px solid var(--colour3);
-    border-radius: 10px;
-    padding: 10px 16px;
-
-    width: 400px;
-    height: calc(var(--navbar-height) - 30px);
-    margin: auto 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--navbar-height);
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     transition: opacity 0.5s;
 }
 
 nav .search .search-bar {
-    width: 100%;
+    background-color: transparent;
+    border: 2px solid var(--colour3);
+    border-radius: 10px;
+
+    height: 45px;
+    width: 400px;
+
+    padding: 0 10px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 nav .search .search-bar input {
@@ -75,7 +83,7 @@ nav .search .search-bar input {
     background-color: transparent;
     border: none;
 
-    width: 100%;
+    width: calc(100% - 10px);
 
     outline: none;
 }
@@ -84,11 +92,14 @@ nav .search .search-bar input::placeholder {
     color: var(--colour3);
 }
 
-nav .search-icon i {
+nav .search .search-bar i {
     color: var(--colour3);
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-nav .search .search-results {
+nav .search-results {
     position: absolute;
     top: calc(var(--navbar-height) + 20px);
     left: 0;
@@ -98,7 +109,7 @@ nav .search .search-results {
     justify-content: center;
 }
 
-nav .search .search-results .search-contents {
+nav .search-results .search-contents {
     width: 400px;
     padding: 25px;
     background-color: var(--colour2);
@@ -114,35 +125,36 @@ nav .search .search-results .search-contents {
     transition: all 0.5s;
 }
 
-nav .search .search-results .search-contents.active {
+nav .search-results .search-contents.active {
     opacity: 1;
 }
 
-nav .search .search-results .search-contents.result {
+nav .search-results .search-contents.result {
     padding: 11px;
+    gap: 10px;
 }
 
-nav .search .search-results .search-contents .no-results {
+nav .search-results .search-contents .no-results {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
 
-nav .search .search-results .search-contents.result .no-results {
+nav .search-results .search-contents.result .no-results {
     display: none;
 }
 
-nav .search .search-results .search-contents .no-results h1 {
+nav .search-results .search-contents .no-results h1 {
     font-size: 2.5rem;
 }
 
-nav .search .search-results .search-contents .no-results i {
+nav .search-results .search-contents .no-results i {
     font-size: 2.5rem;
     opacity: 0.5;
 }
 
-nav .search .search-results .search-contents .game {
+nav .search-results .search-contents .game {
     width: 100%;
     height: 100px;
     padding: 8px;
@@ -152,37 +164,47 @@ nav .search .search-results .search-contents .game {
 
     display: flex;
     justify-content: space-between;
+
+    text-decoration: none;
 }
 
-nav .search .search-results .search-contents .game .thumb {
+nav .search-results .search-contents .game .thumb {
     height: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 10px;
     overflow: hidden;
 }
 
-nav .search .search-results .search-contents .game .thumb img {
+nav .search-results .search-contents .game .thumb img {
     height: 100%;
-
-    text-decoration: none;
 
     transition: all 0.25s;
 }
 
-nav .search .search-results .search-contents .game .thumb img:hover {
+nav .search-results .search-contents .game .thumb img:hover {
     scale: 1.1;
 }
 
-nav .search .search-results .search-contents .game .text {
-    background-color: red;
+nav .search-results .search-contents .game .text {
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-size: 1rem;
 }
 
-nav .search .search-results .search-contents .game .text h1 {
+nav .search-results .search-contents .game .text h1 {
     text-align: right;
+    text-transform: uppercase;
+    font-size: 2.25em;
 }
 
-nav .search .search-results .search-contents .game .text p {
-    text-decoration: none;
+nav .search-results .search-contents .game .text p {
+    opacity: 0.5;
+    font-size: 1em;
+    text-align: right;
 }
 
 nav .nav-buttons {
@@ -472,9 +494,23 @@ nav .hamburger i {
     color: var(--colour3);
 }
 
-@media (max-width: 900px) {
-    nav .search {
-        width: 100%;
+@media (max-width: 1000px) {
+    nav .search .search-bar {
+        width: 250px;
+        margin-left: 125px;
+    }
+
+    nav .search-results .search-contents {
+        width: 250px;
+        margin-left: 125px;
+    }
+
+    nav .search-results .search-contents .game {
+        height: 85px;
+    }
+
+    nav .search-results .search-contents .game .text {
+        font-size: 0.45rem;
     }
 }
 

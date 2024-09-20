@@ -1,10 +1,14 @@
-const gamesContainer = document.getElementById("load-games");
-
 let games = ["hello", "tradle", "hi", "globle"];
 
+// load games
+
+const gamesContainer = document.getElementById("load-games");
+
+otherGames = Array.from(games);
+
 for (let gameIdx = 0; gameIdx < 8; gameIdx += 1) {
-    var game = games[Math.floor(Math.random() * games.length)];
-    games = filterArray(game, games);
+    var game = otherGames[Math.floor(Math.random() * games.length)];
+    otherGames = filterArray(game, otherGames);
     if (window.location.href.indexOf(game) != -1) {
         continue;
     }
@@ -37,4 +41,90 @@ function filterArray(str, array) {
     });
 
     return output;
+}
+
+// search bar
+
+const searchBar = document.getElementById("search-bar");
+const searchResults = document.getElementById("search-results");
+let searchResultsList = []
+
+searchBar.addEventListener("input", (evt) => {
+    if (searchBar.value == "") {
+        searchResults.classList.remove("active");
+
+        return;
+    }
+
+    searchResultsList = searchGames(searchBar.value.toLowerCase());
+    createSearchResults(searchResultsList);
+
+    searchResults.classList.add("active");
+});
+
+function searchGames(searchVal) {
+    let gameResults = [];
+    let tmpGames = Array.from(games);
+
+    tmpGames.forEach(game => {
+        if (game.startsWith(searchVal)) {
+            gameResults.push(game);
+            tmpGames = filterArray(game, tmpGames);
+        }
+    });
+
+    tmpGames.forEach(game => {
+        if (game.includes(searchVal)) {
+            gameResults.push(game);
+            tmpGames = filterArray(game, tmpGames);
+        }
+    });
+
+    return gameResults;
+}
+
+function createSearchResults(results) {
+    searchResults.innerHTML =  `
+    <div class="no-results">
+        <h1>No Results</h1>
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    `;
+    searchResults.classList.remove("result");
+
+    Array.from(results).forEach((result) => {
+        searchResults.append(createSearchResult(result));
+        searchResults.classList.add("result");
+    });
+}
+
+function createSearchResult(name) {
+    let thumb = "thumbnails/" + name + ".png";
+    let href = "play/" + name;
+    let isFavourite = "";
+    if (window.location.href.indexOf("/play") != -1) {
+        href = "../../" + href;
+        thumb = "../../" + thumb;
+    }
+
+    allFavouriteGames.forEach((item) => {
+        if (item == name) {
+            isFavourite = "<p>&#183; In Favourites</p>";
+        }
+    });
+
+    const game = document.createElement("a");
+    game.classList.add("game");
+    game.setAttribute("href", href);
+    game.innerHTML =   `
+        <div class="thumb">
+            <img src="${thumb}" alt="Thumbnail">
+        </div>
+        <div class="text">
+            <h1>${name}</h1>
+            ${isFavourite}
+        </div>
+    `;
+
+    return game;
 }

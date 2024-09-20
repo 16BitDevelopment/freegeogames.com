@@ -138,7 +138,7 @@ function createFavouriteGame(game, gameIdx) {
     let thumb = "thumbnails/" + game + ".png";
     let href = "play/" + game;
     if (window.location.href.indexOf("/play") != -1) {
-        href = "/" + href;
+        href = "../../" + href;
         thumb = "../../" + thumb;
     }
 

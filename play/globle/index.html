@@ -16,7 +16,6 @@
         <link rel="stylesheet" href="../../styles/nav.css">
         <link rel="stylesheet" href="../../styles/play.css">
 
-        <script src="../../search.js" defer></script>
         <script src="../../navbar.js" defer></script>
         <script src="../../play.js" defer></script>
         <script src="../../games.js" defer></script>
@@ -30,29 +29,27 @@
                     <img src="../../Logo.png" alt="Logo">
                 </a>
             </div>
-            <div class="search" id="search-bar">
+            <div class="search">
                 <div class="search-bar">
-                    <input type="text" placeholder="Search">
-                </div>
-                <div class="search-icon">
+                    <input type="text" id="search-bar" placeholder="Search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <div class="search-results">
-                    <div class="search-contents active result">
-                        <div class="no-results">
-                            <h1>No Results</h1>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                        <a class="game" href="#">
-                            <div class="thumb">
-                                <img src="../../thumbnails/globle.png" alt="Thumbnail">
-                            </div>
-                            <div class="text">
-                                <h1>Globle</h1>
-                                <p>&#183; In Favourites</p>
-                            </div>
-                        </a>
+            </div>
+            <div class="search-results">
+                <div class="search-contents" id="search-results">
+                    <div class="no-results">
+                        <h1>No Results</h1>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
+                    <!--<a class="game" href="#">
+                        <div class="thumb">
+                            <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                        </div>
+                        <div class="text">
+                            <h1>Globle</h1>
+                            <p>&#183; In Favourites</p>
+                        </div>
+                    </a>-->
                 </div>
             </div>
             <div class="nav-buttons" id="nav-btns">

@@ -3,7 +3,7 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    bottom: calc(100vh - var(--navbar-height));
+    height: var(--navbar-height);
 
     background-color: var(--colour2);
 
@@ -459,8 +459,8 @@ nav .favourites .favourite-games .game .delete i {
 
 #hamburger-toggle:checked ~ nav {
     position: fixed;
-    bottom: 0;
     border: none;
+    height: 100%;
 }
 
 #hamburger-toggle:checked ~ nav .hamburger .hamburger-icon {
@@ -489,7 +489,7 @@ nav .favourites .favourite-games .game .delete i {
 
 #hamburger-toggle:checked ~ nav .search-results {
     top: calc(2 * var(--navbar-height) + 10px);
-    max-height: calc(100vh - 2 * var(--navbar-height) - 90px);
+    max-height: calc(100% - 2 * var(--navbar-height) - 90px);
     padding: 0 10px;
 }
 
@@ -525,7 +525,6 @@ nav .hamburger i {
 @media (max-width: 1000px) {
     nav {
         --navbar-height: 60px;
-        bottom: calc(100vh - var(--navbar-height));
     }
 
     nav .search .search-bar {

@@ -159,6 +159,10 @@ main .game .game-bottom .btn:hover {
     color: var(--colour2);
 }
 
+main .game .game-bottom h1 {
+    text-transform: uppercase;
+}
+
 main .description {
     background-color: var(--colour2);
     position: absolute;

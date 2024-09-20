@@ -14,33 +14,44 @@
 
         <link rel="stylesheet" href="styles/general.css">
         <link rel="stylesheet" href="styles/nav.css">
+        <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="styles/footer.css">
 
-        <script src="search.js" defer></script>
         <script src="navbar.js" defer></script>
+        <script src="games.js" defer></script>
     </head>
     <body>
         <input type="checkbox" id="hamburger-toggle">
         <nav>
             <div class="black-overlay" id="black-overlay"></div>
             <div class="logo">
-                <a href="/">
-                    <img src="Logo.png" alt="Logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="Logo">
                 </a>
             </div>
-            <div class="hamburger">
-                <label for="hamburger-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </label>
-            </div>
-            <div class="search" id="search-bar">
+            <div class="search">
                 <div class="search-bar">
-                    <input type="text" placeholder="Search">
-                </div>
-                <div class="search-icon">
+                    <input type="text" id="search-bar" placeholder="Search" autocomplete="off">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-            <div class="search-results"></div>
+            <div class="search-results">
+                <div class="search-contents" id="search-results">
+                    <div class="no-results">
+                        <h1>No Results</h1>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <!--<a class="game" href="#">
+                        <div class="thumb">
+                            <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                        </div>
+                        <div class="text">
+                            <h1>Globle</h1>
+                            <p>&#183; In Favourites</p>
+                        </div>
+                    </a>-->
+                </div>
+            </div>
             <div class="nav-buttons" id="nav-btns">
                 <div class="favourites-btn" onclick="openTab('favourites', this)">
                     <i class="fa-regular fa-heart"></i>
@@ -50,6 +61,14 @@
                     <i class="fa-regular fa-bell"></i>
                     <div class="notification-dot" id="notifications-notification"></div>
                 </div>
+            </div>
+            <div class="hamburger">
+                <label for="hamburger-toggle" class="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <label for="hamburger-toggle" class="x-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
             </div>
             <div class="favourites box" id="favourites">
                 <div class="box-header">
@@ -61,14 +80,6 @@
                         <h1>Favourite Games Will Appear Here</h1>
                         <i class="fa-solid fa-cloud"></i>
                     </div>
-                    <!--<div class="game" id="game1">
-                        <a class="thumbnail" href="play">
-                            <img src="/thumbnails/Globle.png" alt="Thumbnail">
-                        </a>
-                        <div class="delete" onclick="removeFavouriteGame(1)">
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </div>-->
                 </div>
             </div>
             <div class="notifications box" id="notifications">
@@ -79,5 +90,22 @@
                 <div class="list"></div>
             </div>
         </nav>
+
+        <main>
+        </main>
+
+        <footer>
+            <img src="../../images/logo.png" alt="Logo" class="logo">
+            <div class="developer">
+                <h1>Developer</h1>
+                <a href="https://16bitdevelopment.com" target="_blank">16 Bit Development</a>
+            </div>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61559303773751" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/16bitdevelopment/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/16bitdevelopmen" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <h1 class="copyright">&copy; Free Geo Games 2024</h1>
+        </footer>
     </body>
 </html>

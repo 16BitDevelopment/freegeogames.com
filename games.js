@@ -1,4 +1,4 @@
-let games = ["hello", "tradle", "hi", "globle", "hey", "ha", "haha", "hahaha", "he", "heh"];
+let games = ["globle", "tradle"];
 
 // load games
 
@@ -10,6 +10,7 @@ for (let gameIdx = 0; gameIdx < 8; gameIdx += 1) {
     var game = otherGames[Math.floor(Math.random() * games.length)];
     otherGames = filterArray(game, otherGames);
     if (window.location.href.indexOf(game) != -1) {
+        gameIdx -= 1;
         continue;
     }
     gamesContainer.append(createGame(game));

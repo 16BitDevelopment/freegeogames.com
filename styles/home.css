@@ -1,3 +1,11 @@
 main {
     background-color: red;
 }
+
+main .games {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: red;
+    overflow: hidden;
+}

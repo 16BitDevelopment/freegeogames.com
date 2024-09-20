@@ -13,6 +13,7 @@ nav {
     justify-content: space-between;
 
     border-bottom: 2px solid var(--colour3);
+    box-shadow: 0 10px 10px #00000040;
 
     z-index: 150;
 
@@ -169,6 +170,7 @@ nav .search-results .search-contents .no-results i {
 nav .search-results .search-contents .game {
     width: 100%;
     min-height: 100px;
+    height: 100px;
     padding: 8px;
 
     border-radius: 10px;

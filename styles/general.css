@@ -26,4 +26,7 @@ body {
     padding-bottom: 50px;
 
     background-color: var(--colour4);
+    background-image: url("/images/bg-img.png");
+
+    min-height: 100vh;
 }

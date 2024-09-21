@@ -7,21 +7,28 @@ const gamesContainer = document.getElementById("load-games");
 otherGames = Array.from(games);
 
 for (let gameIdx = 0; gameIdx < 8; gameIdx += 1) {
-    var game = otherGames[Math.floor(Math.random() * games.length)];
+    var game = otherGames[Math.floor(Math.random() * otherGames.length)];
     otherGames = filterArray(game, otherGames);
     if (window.location.href.indexOf(game) != -1) {
         gameIdx -= 1;
         continue;
     }
     gamesContainer.append(createGame(game));
+    if (otherGames.length < 1) {
+        break;
+    }
 }
 
 function createGame(gameName) {
     const game = document.createElement("div");
+    let page = "play/";
+    if (window.location.href.indexOf("/play") != -1) {
+        page = "../";
+    }
     game.classList.add("game");
     game.innerHTML = `
         <div class="thumb">
-            <a href="../${gameName}/">
+            <a href="${page}${gameName}/">
                 <img src="../../thumbnails/${gameName}.png" alt="Thumbnail">
             </a>
         </div>

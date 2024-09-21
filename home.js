@@ -6,6 +6,15 @@ let activePopularGame = 1;
 dotsInit();
 updateActiveGame();
 
+const popularGameLoop = setInterval(() => {
+    activePopularGame += 1;
+    updateActiveGame();
+}, 5000);
+
+function stopLoop() {
+    clearInterval(popularGameLoop);
+}
+
 function dotsInit() {
     for(let i = 0; i < Array.from(popularGames.children).length; i += 1) {
         const el = document.createElement("div");

@@ -63,6 +63,8 @@ main .top .top-content-container .arrow-btns .arrow {
     color: var(--colour3);
     font-size: 25px;
 
+    outline: none;
+
     pointer-events: all;
 
     transition: all 0.25s;
@@ -109,8 +111,8 @@ main .top .top-content-container .games .game img {
 
 main .top .top-content-container .games .game a {
     position: absolute;
-    top: 80%;
-    left: 85%;
+    top: 85%;
+    left: 65%;
     translate: -50% -50%;
 
     text-decoration: none;
@@ -156,6 +158,87 @@ main .top .top-content-container .dots .dot {
 
 main .top .top-content-container .dots .dot.active {
     background-color: var(--colour3);
+    scale: 1.25;
+}
+
+main h1.subtitle {
+    margin-top: 100px;
+
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main .other-games {
+    margin-top: 50px;
+    height: 200px;
+
+    display: flex;
+    justify-content:  center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+main .other-games .game {
+    height: 100%;
+    aspect-ratio: 16 / 9;
+
+    position: relative;
+
+    overflow: hidden;
+    border-radius: 10px;
+
+    transition: all 0.25s;
+}
+
+main .other-games .game:hover {
+    box-shadow: -10px -10px 50px rgba(0, 0, 0, 0.3),
+    10px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+main .other-games .game .thumb {
+    height: 100%;
+    width: 100%;
+}
+
+main .other-games .game .thumb img {
+    height: 100%;
+    width: 100%;
+    box-sizing: cover;
+}
+
+main .other-games .game .text {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+    background-color: #00000080;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: all 0.25s;
+}
+
+main .other-games .game:hover .text {
+    opacity: 1;
+}
+
+main .other-games .game .text h1 {
+    translate: 0 10px;
+
+    text-transform: uppercase;
+
+    transition: all 0.25s;
+}
+
+main .other-games .game:hover .text h1 {
+    translate: 0;
 }
 
 @media (max-width: 1150px) {

@@ -226,9 +226,11 @@ main .description a::after {
 }
 
 h1.subtitle {
-    text-align: center;
     margin-bottom: 50px;
+
     font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .other-games {

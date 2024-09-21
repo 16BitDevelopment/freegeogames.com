@@ -6,6 +6,8 @@
 
         <title>Free Geo Games</title>
 
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
         <script src="https://kit.fontawesome.com/9055024f82.js" crossorigin="anonymous"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,10 +99,10 @@
                 <div class="top-content-container">
                     <h1>Popular Games</h1>
                     <div class="arrow-btns">
-                        <button class="arrow left" onclick="activePopularGame -= 1; updateActiveGame();">
+                        <button class="arrow left" onclick="activePopularGame -= 1; updateActiveGame(); stopLoop();">
                             <i class="fa-solid fa-arrow-left"></i>
                         </button>
-                        <button class="arrow right" onclick="activePopularGame += 1; updateActiveGame();">
+                        <button class="arrow right" onclick="activePopularGame += 1; updateActiveGame(); stopLoop();">
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
@@ -114,13 +116,23 @@
                             <img src="thumbnails/tradle.png" alt="Thumbnail">
                             <a href="play/tradle/" class="play-now">Play Now</a>
                         </div>
-                        <div class="game">
-                            <img src="thumbnails/tradle.png" alt="Thumbnail">
-                            <a href="play/globle/" class="play-now">Play Now</a>
-                        </div>
                     </div>
                     <div class="dots" id="active-game-display"></div>
                 </div>
+            </div>
+
+            <h1 class="subtitle">Other Games</h1>
+            <div class="other-games" id="load-games">
+                <!--<div class="game">
+                    <div class="thumb">
+                        <a href="../globle/">
+                            <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                        </a>
+                    </div>
+                    <div class="text">
+                        <h1>Globle</h1>
+                    </div>
+                </div>-->
             </div>
         </main>
 

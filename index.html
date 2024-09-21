@@ -19,6 +19,7 @@
 
         <script src="navbar.js" defer></script>
         <script src="games.js" defer></script>
+        <script src="home.js" defer></script>
     </head>
     <body>
         <input type="checkbox" id="hamburger-toggle">
@@ -92,6 +93,35 @@
         </nav>
 
         <main>
+            <div class="top">
+                <div class="top-content-container">
+                    <h1>Popular Games</h1>
+                    <div class="arrow-btns">
+                        <button class="arrow left" onclick="activePopularGame -= 1; updateActiveGame();">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button class="arrow right" onclick="activePopularGame += 1; updateActiveGame();">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="shadow-overlay"></div>
+                    <div class="games" id="popular-games" data-active-game="1">
+                        <div class="game">
+                            <img src="thumbnails/globle.png" alt="Thumbnail">
+                            <a href="play/globle/" class="play-now">Play Now</a>
+                        </div>
+                        <div class="game">
+                            <img src="thumbnails/tradle.png" alt="Thumbnail">
+                            <a href="play/tradle/" class="play-now">Play Now</a>
+                        </div>
+                        <div class="game">
+                            <img src="thumbnails/tradle.png" alt="Thumbnail">
+                            <a href="play/globle/" class="play-now">Play Now</a>
+                        </div>
+                    </div>
+                    <div class="dots" id="active-game-display"></div>
+                </div>
+            </div>
         </main>
 
         <footer>
@@ -105,6 +135,7 @@
                 <a href="https://www.facebook.com/profile.php?id=61559303773751" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/16bitdevelopment/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://x.com/16bitdevelopmen" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/16BitDevelopment" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
             <h1 class="copyright">&copy; Free Geo Games 2024</h1>
         </footer>

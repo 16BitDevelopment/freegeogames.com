@@ -238,7 +238,7 @@ nav .nav-buttons .notification-dot {
     top: -3px;
     right: -3px;
     height: 15px;
-    aspect-ratio: 1;
+    width: 15px;
 
     background-color: var(--colour3);
 

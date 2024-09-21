@@ -1,11 +1,200 @@
-main {
-    background-color: red;
+main .top {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid var(--colour3);
+
+    box-shadow: -10px -10px 25px rgba(255, 255, 255, 0.15),
+    10px 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-main .games {
+main .top .top-content-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+main .top .top-content-container .shadow-overlay {
     position: absolute;
+    inset: 0;
+    background-image: linear-gradient(120deg, var(--colour5) 40%, transparent 40%);
+    opacity: 0.5;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+main .top .top-content-container h1 {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    font-size: 5rem;
+    text-transform: uppercase;
+    max-width: 40%;
+
+    z-index: 10;
+}
+
+main .top .top-content-container .arrow-btns {
+    position: absolute;
+    inset: 0;
+
+    padding: 0 25px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+main .top .top-content-container .arrow-btns .arrow {
+    height: 50px;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: 2px solid var(--colour3);
+    border-radius: 10px;
+
+    color: var(--colour3);
+    font-size: 25px;
+
+    pointer-events: all;
+
+    transition: all 0.25s;
+}
+
+main .top .top-content-container .arrow-btns .arrow:hover {
+    background-color: var(--colour3);
+    color: var(--colour2);
+}
+
+main .top .top-content-container .arrow-btns .arrow i {
+    color: inherit;
+    font-size: inherit;
+}
+
+main .top .top-content-container .games {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: relative;
+}
+
+main .top .top-content-container .games .game {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: all 0.5s;
+}
+
+main .top .top-content-container .games .game.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+main .top .top-content-container .games .game img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+main .top .top-content-container .games .game a {
+    position: absolute;
+    top: 80%;
+    left: 85%;
+    translate: -50% -50%;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    text-wrap: nowrap;
+    padding: 0.5em 1em;
+
+    border: 2px solid var(--colour3);
+    border-radius: 10px;
+    color: var(--colour3);
+
+    transition: all 0.25s;
+}
+
+main .top .top-content-container .games .game a:hover {
+    box-shadow: 0 0 50px var(--colour3);
+
+    background-color: var(--colour3);
+    color: var(--colour2);
+}
+
+main .top .top-content-container .dots {
+    position: absolute;
+    bottom: 10px;
     left: 0;
     right: 0;
-    background-color: red;
-    overflow: hidden;
+    height: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+main .top .top-content-container .dots .dot {
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: var(--colour2);
+    border-radius: 9999px;
+
+    transition: all 0.25s;
+}
+
+main .top .top-content-container .dots .dot.active {
+    background-color: var(--colour3);
+}
+
+@media (max-width: 1150px) {
+    main .top .top-content-container h1 {
+        font-size: 3rem;
+        top: 20px;
+        left: 30px;
+    }
+
+    main .top .top-content-container .games .game a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    main .top .top-content-container h1 {
+        font-size: 2rem;
+        top: 20px;
+        left: 30px;
+    }
+}
+
+@media (max-width: 575px) {
+    main .top .top-content-container h1 {
+        font-size: 1rem;
+        top: 15px;
+        left: 18px;
+    }
+
+    main .top .top-content-container .arrow-btns {
+        padding: 10px;
+    }
+
+    main .top .top-content-container .arrow-btns .arrow {
+        height: 30px;
+        font-size: 15px;
+    }
+
+    main .top .top-content-container .games .game a {
+        font-size: 0.75rem;
+    }
 }

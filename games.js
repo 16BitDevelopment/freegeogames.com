@@ -22,14 +22,16 @@ for (let gameIdx = 0; gameIdx < 8; gameIdx += 1) {
 function createGame(gameName) {
     const game = document.createElement("div");
     let page = "play/";
+    let thumb = `images/${gameName}.png`;
     if (window.location.href.indexOf("/play") != -1) {
         page = "../";
+        thumb = "../../" + thumb;
     }
     game.classList.add("game");
     game.innerHTML = `
         <div class="thumb">
             <a href="${page}${gameName}/">
-                <img src="../../thumbnails/${gameName}.png" alt="Thumbnail">
+                <img src="${thumb}" alt="Thumbnail">
             </a>
         </div>
         <div class="text">

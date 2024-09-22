@@ -369,7 +369,7 @@ h1.subtitle {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     main .game {
         --game-bottom-height: 50px;
         font-size: 100%;

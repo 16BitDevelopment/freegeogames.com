@@ -145,6 +145,8 @@ main .top .top-content-container .dots {
     display: flex;
     justify-content: center;
     gap: 10px;
+
+    pointer-events: none;
 }
 
 main .top .top-content-container .dots .dot {
@@ -171,7 +173,6 @@ main h1.subtitle {
 
 main .other-games {
     margin-top: 50px;
-    height: 200px;
 
     display: flex;
     justify-content:  center;
@@ -180,7 +181,7 @@ main .other-games {
 }
 
 main .other-games .game {
-    height: 100%;
+    height: 200px;
     aspect-ratio: 16 / 9;
 
     position: relative;
@@ -265,7 +266,7 @@ main .other-games .game:hover .text h1 {
     main .top .top-content-container h1 {
         font-size: 1rem;
         top: 15px;
-        left: 18px;
+        left: 20px;
     }
 
     main .top .top-content-container .arrow-btns {
@@ -279,5 +280,9 @@ main .other-games .game:hover .text h1 {
 
     main .top .top-content-container .games .game a {
         font-size: 0.75rem;
+    }
+
+    main .top .top-content-container .dots {
+        height: 10px;
     }
 }

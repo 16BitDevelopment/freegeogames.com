@@ -1,4 +1,4 @@
-let games = ["globle", "tradle", "travle", "flagle", "worldle"];
+let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele"];
 
 // load games
 

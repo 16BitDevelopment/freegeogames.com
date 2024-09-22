@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Free Geo Games</title>
+        <title>Travle | Free Geo Games</title>
 
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.png">
 
         <script src="https://kit.fontawesome.com/9055024f82.js" crossorigin="anonymous"></script>
 
@@ -14,22 +14,22 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="styles/general.css">
-        <link rel="stylesheet" href="styles/nav.css">
-        <link rel="stylesheet" href="styles/home.css">
-        <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="../../styles/general.css">
+        <link rel="stylesheet" href="../../styles/nav.css">
+        <link rel="stylesheet" href="../../styles/play.css">
+        <link rel="stylesheet" href="../../styles/footer.css">
 
-        <script src="navbar.js" defer></script>
-        <script src="games.js" defer></script>
-        <script src="home.js" defer></script>
+        <script src="../../navbar.js" defer></script>
+        <script src="../../play.js" defer></script>
+        <script src="../../games.js" defer></script>
     </head>
     <body>
         <input type="checkbox" id="hamburger-toggle">
         <nav>
             <div class="black-overlay" id="black-overlay"></div>
             <div class="logo">
-                <a href="#">
-                    <img src="images/logo.png" alt="Logo">
+                <a href="../../">
+                    <img src="../../images/logo.png" alt="Logo">
                 </a>
             </div>
             <div class="search">
@@ -95,53 +95,50 @@
         </nav>
 
         <main>
-            <div class="top">
-                <div class="top-content-container">
-                    <h1>Popular Games</h1>
-                    <div class="arrow-btns">
-                        <button class="arrow left" onclick="activePopularGame -= 1; updateActiveGame(); stopLoop();">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                        <button class="arrow right" onclick="activePopularGame += 1; updateActiveGame(); stopLoop();">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+            <div class="game" id="active-game">
+                <iframe id="game" src="https://travle.earth/" frameborder="0" onload="gameLoaded()"></iframe>
+                <div class="load-screen" id="load-screen">
+                    <h1>LOADING</h1>
+                    <div class="dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
                     </div>
-                    <div class="shadow-overlay"></div>
-                    <div class="games" id="popular-games" data-active-game="1">
-                        <div class="game">
-                            <img src="thumbnails/tradle.png" alt="Thumbnail">
-                            <a href="play/tradle/" class="play-now">Play Now</a>
-                        </div>
-                        <div class="game">
-                            <img src="thumbnails/flagle.png" alt="Thumbnail">
-                            <a href="play/flagle/" class="play-now">Play Now</a>
-                        </div>
-                        <div class="game">
-                            <img src="thumbnails/worldle.png" alt="Thumbnail">
-                            <a href="play/worldle/" class="play-now">Play Now</a>
-                        </div>
+                    <img src="../../images/rotate-phone.png" alt="Rotate Phone" class="rotate">
+                </div>
+                <div class="game-bottom">
+                    <div class="favourite btn" id="favourite-btn" data-href="travle"  onclick="addFavouriteGame()">
+                        <i class="fa-regular fa-heart"></i>
                     </div>
-                    <div class="dots" id="active-game-display"></div>
+                    <h1>Travle</h1>
+                    <div class="fullscreen btn" onclick="fullscreen()">
+                        <i class="fa-solid fa-maximize" id="fullscreen"></i>
+                    </div>
                 </div>
             </div>
-
-            <h1 class="subtitle">Other Games</h1>
-            <div class="other-games" id="load-games">
-                <!--<div class="game">
-                    <div class="thumb">
-                        <a href="../globle/">
-                            <img src="../../thumbnails/globle.png" alt="Thumbnail">
-                        </a>
-                    </div>
-                    <div class="text">
-                        <h1>Globle</h1>
-                    </div>
-                </div>-->
+            <div class="description">
+                <h1>Travle</h1>
+                <p>Globle is an engaging geography guessing game that challenges players to identify a mystery country based on their proximity to it. Each day, players make guesses and receive hints indicating how close their guesses are to the target country, with colors signifying distance. The goal is to discover the mystery country in as few guesses as possible, making it both fun and educational. Test your geographical knowledge and see how quickly you can pinpoint the location!</p>
+                <h2>Creator:</h2>
+                <a href="https://teuteuf.fr/" target="_blank" data-creator="Teuteuf Games">Teuteuf Games</a>
             </div>
         </main>
+        <h1 class="subtitle">Other Games</h1>
+        <div class="other-games" id="load-games">
+            <!--<div class="game">
+                <div class="thumb">
+                    <a href="../globle/">
+                        <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                    </a>
+                </div>
+                <div class="text">
+                    <h1>Globle</h1>
+                </div>
+            </div>-->
+        </div>
 
         <footer>
-            <img src="images/logo.png" alt="Logo" class="logo">
+            <img src="../../images/logo.png" alt="Logo" class="logo">
             <p class="info">Welcome to FreeGeoGames.com! Explore a vibrant collection of fun geography games that challenge your knowledge and skills. From guessing countries and capitals to identifying flags and landmarks, our engaging puzzles and quizzes offer something for everyone. Perfect for players of all ages, our site makes learning geography an exciting adventure.</p>
             <div class="developer">
                 <h1>Developer</h1>

@@ -187,7 +187,9 @@ main .other-games .game {
     position: relative;
 
     overflow: hidden;
+    
     border-radius: 10px;
+    border: 2px solid var(--colour3);
 
     transition: all 0.25s;
 }

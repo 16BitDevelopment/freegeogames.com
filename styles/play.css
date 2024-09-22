@@ -246,9 +246,8 @@ h1.subtitle {
     height: 150px;
     aspect-ratio: 16 / 9;
 
-    padding: 10px;
-
     border-radius: 10px;
+    border: 2px solid var(--colour3);
 
     background-color: var(--colour2);
 

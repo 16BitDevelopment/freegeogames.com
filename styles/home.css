@@ -207,7 +207,7 @@ main .other-games .game .thumb {
 main .other-games .game .thumb img {
     height: 100%;
     width: 100%;
-    box-sizing: cover;
+    object-fit: cover;
 }
 
 main .other-games .game .text {

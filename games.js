@@ -1,4 +1,4 @@
-let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele"];
+let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele", "globle-capitals"];
 
 // load games
 
@@ -21,6 +21,7 @@ for (let gameIdx = 0; gameIdx < 8; gameIdx += 1) {
 
 function createGame(gameName) {
     const game = document.createElement("div");
+    const realGameName = gameName.replace("-", " ")
     let page = "play/";
     let thumb = `thumbnails/${gameName}.png`;
     if (window.location.href.indexOf("/play") != -1) {
@@ -35,7 +36,7 @@ function createGame(gameName) {
             </a>
         </div>
         <div class="text">
-            <h1>${gameName}</h1>
+            <h1>${realGameName}</h1>
         </div>
     `;
 
@@ -122,6 +123,7 @@ function createSearchResults(results) {
 }
 
 function createSearchResult(name) {
+    const gameName = name.replace("-", " ")
     let thumb = "thumbnails/" + name + ".png";
     let href = "play/" + name;
     let isFavourite = "";
@@ -144,7 +146,7 @@ function createSearchResult(name) {
             <img src="${thumb}" alt="Thumbnail">
         </div>
         <div class="text">
-            <h1>${name}</h1>
+            <h1>${gameName}</h1>
             ${isFavourite}
         </div>
     `;

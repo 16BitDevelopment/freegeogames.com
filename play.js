@@ -12,6 +12,7 @@ function gameLoaded() {
 }
 
 function fullscreen() {
+    document.body.classList.toggle("noscroll");
     activeGame.classList.toggle("fullscreen");
 
     fullscreenIcon.classList.toggle("fa-maximize");

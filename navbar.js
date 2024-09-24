@@ -63,6 +63,10 @@ function openTab(tab, btn) {
         btn.children[0].classList.toggle("fa-regular");
         btn.children[0].classList.toggle("fa-solid");
     }
+
+    if (tab == "notifications") {
+        updateNotifications();
+    }
 }
 
 function closeTab(tab) {
@@ -77,6 +81,7 @@ function closeTab(tab) {
 }
 
 //favourite games
+const isHome = window.location.href.indexOf("/play") == -1;
 
 const favouriteGamesList = document.getElementById("favourite-games");
 const favouriteBtn = document.getElementById("favourite-btn") || null;
@@ -84,7 +89,9 @@ const favouriteBtn = document.getElementById("favourite-btn") || null;
 let allFavouriteGames = getFavouriteGames();
 updateFavouriteGamesList();
 
-const favouriteBtnHref = favouriteBtn.getAttribute("data-href");
+if (!isHome) {
+    const favouriteBtnHref = favouriteBtn.getAttribute("data-href");
+}
 
 updateFavouriteBtn();
 
@@ -125,6 +132,10 @@ function isFavouriteGame(href) {
 }
 
 function updateFavouriteBtn() {
+    if (isHome) {
+        return;
+    }
+
     favouriteBtn.children[0].classList.remove("fa-regular");
     favouriteBtn.children[0].classList.remove("fa-solid");
 
@@ -188,4 +199,44 @@ function saveFavouriteGames() {
 function getFavouriteGames() {
     const favouriteGames = localStorage.getItem("favouriteGames") || "[]";
     return JSON.parse(favouriteGames);
+}
+
+//notifications
+const allNotifications = [
+    ["star", "Welcome!", "Welcome to freegeogames! Browse around some games to get started."]
+];
+
+const notifictionsBox = document.getElementById("notifications-items");
+const notifcationsIcon = document.getElementById("notifications-btn");
+const notificationsLS = localStorage.getItem("notifications") || 0;
+
+if (notificationsLS < allNotifications.length) {
+     notifcationsIcon.children[1].classList.add("new");
+}
+
+loadNotifications();
+
+function updateNotifications() {
+    localStorage.setItem("notifications", notifictionsBox.childElementCount);
+}
+
+function loadNotifications() {
+    allNotifications.forEach(item => {
+        notifictionsBox.append(createItem(item))
+    });
+}
+
+function createItem(itemInfo) {
+    const item = document.createElement("div");
+    item.classList.add("item");
+    item.innerHTML = `
+        <div class="icon">
+            <i class="fa-solid fa-${itemInfo[0]}"></i>
+        </div>
+        <div class="text">
+            <h1>${itemInfo[1]}</h1>
+            <p>${itemInfo[2]}</p>
+        </div>
+    `;
+    return item;
 }

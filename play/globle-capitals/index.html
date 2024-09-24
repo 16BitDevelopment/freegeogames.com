@@ -28,8 +28,8 @@
         <nav>
             <div class="black-overlay" id="black-overlay"></div>
             <div class="logo">
-                <a href="../../">
-                    <img src="../../images/logo.png" alt="Logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="Logo">
                 </a>
             </div>
             <div class="search">
@@ -60,7 +60,7 @@
                     <i class="fa-regular fa-heart"></i>
                     <div class="notification-dot" id="favourites-notification"></div>
                 </div>
-                <div class="notification-btn" onclick="openTab('notifications', this)">
+                <div class="notification-btn" id="notifications-btn" onclick="openTab('notifications', this)">
                     <i class="fa-regular fa-bell"></i>
                     <div class="notification-dot" id="notifications-notification"></div>
                 </div>
@@ -90,7 +90,7 @@
                     <h1>Notifications</h1>
                     <i class="fa-solid fa-xmark" onclick="closeTab('notifications')"></i>
                 </div>
-                <div class="list"></div>
+                <div class="list" id="notifications-items"></div>
             </div>
         </nav>
 

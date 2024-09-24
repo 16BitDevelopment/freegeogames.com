@@ -95,7 +95,7 @@ main .top .top-content-container .games .game {
 
     pointer-events: none;
 
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 main .top .top-content-container .games .game.active {

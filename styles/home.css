@@ -112,7 +112,7 @@ main .top .top-content-container .games .game img {
 main .top .top-content-container .games .game a {
     position: absolute;
     top: 85%;
-    left: 70%;
+    left: 80%;
     translate: -50% -50%;
 
     text-decoration: none;

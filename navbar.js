@@ -89,8 +89,10 @@ const favouriteBtn = document.getElementById("favourite-btn") || null;
 let allFavouriteGames = getFavouriteGames();
 updateFavouriteGamesList();
 
+let favouriteBtnHref = null;
+
 if (!isHome) {
-    const favouriteBtnHref = favouriteBtn.getAttribute("data-href");
+    favouriteBtnHref = favouriteBtn.getAttribute("data-href");
 }
 
 updateFavouriteBtn();
@@ -203,7 +205,7 @@ function getFavouriteGames() {
 
 //notifications
 const allNotifications = [
-    ["star", "Welcome!", "Welcome to freegeogames! Browse around some games to get started."]
+    ["star", "Welcome!", "Welcome to Free Geo Games! Browse around some games to get started."]
 ];
 
 const notifictionsBox = document.getElementById("notifications-items");
@@ -217,7 +219,7 @@ if (notificationsLS < allNotifications.length) {
 loadNotifications();
 
 function updateNotifications() {
-    localStorage.setItem("notifications", notifictionsBox.childElementCount);
+    localStorage.setItem("notifications", allNotifications.length);
 }
 
 function loadNotifications() {

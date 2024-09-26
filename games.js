@@ -4,19 +4,21 @@ let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele", "glob
 
 const gamesContainer = document.getElementById("load-games");
 
-otherGames = Array.from(games);
+if (gamesContainer != null) {
+    otherGames = Array.from(games);
 
-for (let gameIdx = 0; gameIdx < 8; gameIdx += 1) {
-    var game = otherGames[Math.floor(Math.random() * otherGames.length)];
-    if (otherGames.length < 1) {
-        break;
+    for (let gameIdx = 0; gameIdx < 8; gameIdx += 1) {
+        var game = otherGames[Math.floor(Math.random() * otherGames.length)];
+        if (otherGames.length < 1) {
+            break;
+        }
+        otherGames = filterArray(game, otherGames);
+        if (window.location.href.indexOf(game) != -1) {
+            gameIdx -= 1;
+            continue;
+        }
+        gamesContainer.append(createGame(game));
     }
-    otherGames = filterArray(game, otherGames);
-    if (window.location.href.indexOf(game) != -1) {
-        gameIdx -= 1;
-        continue;
-    }
-    gamesContainer.append(createGame(game));
 }
 
 function createGame(gameName) {

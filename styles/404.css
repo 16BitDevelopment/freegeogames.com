@@ -1,0 +1,17 @@
+main {
+    height: 500px;
+
+    padding: 30px 60px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main h1 {
+    font-size: 8rem;
+}
+
+main p {
+    font-size: 2rem;
+}

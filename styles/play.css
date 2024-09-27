@@ -14,7 +14,7 @@ main .game {
 
     background-color: var(--colour1);
 
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px 20px 10px 10px;
 
 
     --game-bottom-height: 75px;
@@ -32,16 +32,9 @@ main .game {
 main .game.fullscreen {
     aspect-ratio: unset;
 
-    position: fixed;
-    top: 0;
-    bottom: var(--game-bottom-height);
-    left: 0;
-    right: 0;
     scale: 1;
 
     translate: 0;
-
-    z-index: 150;
 }
 
 main .game.fullscreen iframe,
@@ -71,7 +64,7 @@ main .game .load-screen {
     justify-content: center;
     gap: 100px;
 
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px 20px 10px 10px;
 
     z-index: 50;
 
@@ -115,7 +108,7 @@ main .game .load-screen .dots .dot:nth-child(3) {
 
 main .game .game-bottom {
     position: absolute;
-    top: 100%;
+    bottom: 0;
     left: 0;
     right: 0;
     height: var(--game-bottom-height);
@@ -129,6 +122,8 @@ main .game .game-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    z-index: 150;
 }
 
 main .game .game-bottom .btn {

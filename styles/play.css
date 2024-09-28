@@ -37,6 +37,11 @@ main .game.fullscreen {
     translate: 0;
 }
 
+main .game.mobile {
+    position: fixed;
+    inset: 0;
+}
+
 main .game.fullscreen iframe,
 main .game.fullscreen .load-screen,
 main .game.fullscreen .game-bottom {

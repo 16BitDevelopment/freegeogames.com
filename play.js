@@ -8,6 +8,8 @@ function gameLoaded() {
 }
 
 function fullscreen() {
+    alert("fullscreen() called");
+
     activeGame.classList.remove("mobile");
     activeGame.classList.remove("fullscreen");
     document.body.classList.remove("noscroll");
@@ -37,8 +39,8 @@ function fullscreen() {
         } else if (activeGame.msRequestFullscreen) { /* IE11 */
             activeGame.msRequestFullscreen();
         } else {
-            activeGame.classList.add("mobile");
-            alert(4);
+            //activeGame.classList.add("mobile");
+            alert("mobile fullscreen");
         }
     }
 }

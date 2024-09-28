@@ -35,9 +35,7 @@ main .game.fullscreen {
     scale: 1;
 
     translate: 0;
-}
 
-main .game.mobile {
     position: fixed;
     inset: 0;
 

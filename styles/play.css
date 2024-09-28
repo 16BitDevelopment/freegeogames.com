@@ -238,7 +238,7 @@ h1.subtitle {
 }
 
 .other-games .game {
-    height: 150px;
+    height: 200px;
     aspect-ratio: 16 / 9;
 
     border-radius: 10px;
@@ -304,6 +304,10 @@ h1.subtitle {
 .other-games .game:hover {
     box-shadow: -10px -10px 50px rgba(0, 0, 0, 0.3),
     10px 10px 50px rgba(0, 0, 0, 0.3);
+
+    border: 5px solid var(--colour1);
+
+    scale: 1.1;
 }
 
 .other-games .game:hover .text {

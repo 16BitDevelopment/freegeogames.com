@@ -40,6 +40,8 @@ main .game.fullscreen {
 main .game.mobile {
     position: fixed;
     inset: 0;
+
+    z-index: 200;
 }
 
 main .game.fullscreen iframe,

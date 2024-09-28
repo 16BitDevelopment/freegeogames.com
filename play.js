@@ -8,9 +8,6 @@ function gameLoaded() {
 }
 
 function fullscreen() {
-    alert("fullscreen() called");
-
-    activeGame.classList.remove("mobile");
     activeGame.classList.remove("fullscreen");
     document.body.classList.remove("noscroll");
 
@@ -39,8 +36,14 @@ function fullscreen() {
         } else if (activeGame.msRequestFullscreen) { /* IE11 */
             activeGame.msRequestFullscreen();
         } else {
-            //activeGame.classList.add("mobile");
-            alert("mobile fullscreen");
+            activeGame.classList.toggle("mobile");
+            if (activeGame.classList.contains("mobile")) {
+                activeGame.classList.remove("fullscreen");
+                document.body.classList.remove("noscroll");
+        
+                fullscreenIcon.classList.add("fa-maximize");
+                fullscreenIcon.classList.remove("fa-minimize");
+            }
         }
     }
 }

@@ -8,6 +8,13 @@ function gameLoaded() {
 }
 
 function fullscreen() {
+    activeGame.classList.remove("mobile");
+    activeGame.classList.remove("fullscreen");
+    document.body.classList.remove("noscroll");
+
+    fullscreenIcon.classList.add("fa-maximize");
+    fullscreenIcon.classList.remove("fa-minimize");
+
     if (document.fullscreenElement) {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -17,20 +24,21 @@ function fullscreen() {
             document.msExitFullscreen();
         }
     } else {
+        activeGame.classList.add("fullscreen");
+        document.body.classList.add("noscroll");
+
+        fullscreenIcon.classList.add("fa-minimize");
+        fullscreenIcon.classList.remove("fa-maximize");
+
         if (activeGame.requestFullscreen) {
             activeGame.requestFullscreen();
         } else if (activeGame.webkitRequestFullscreen) { /* Safari */
             activeGame.webkitRequestFullscreen();
         } else if (activeGame.msRequestFullscreen) { /* IE11 */
             activeGame.msRequestFullscreen();
+        } else {
+            activeGame.classList.add("mobile");
+            alert(4);
         }
     }
 }
-
-document.addEventListener("fullscreenchange", () => {
-    document.body.classList.toggle("noscroll");
-    activeGame.classList.toggle("fullscreen");
-
-    fullscreenIcon.classList.toggle("fa-maximize");
-    fullscreenIcon.classList.toggle("fa-minimize");
-});

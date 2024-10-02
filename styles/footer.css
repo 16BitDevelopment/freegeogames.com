@@ -23,7 +23,20 @@ footer .info {
     max-width: 100%;
     max-width: 600px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+}
+
+footer a:nth-child(3) {
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.25em;
+
+    transition: all 0.25s;
+}
+
+footer a:nth-child(3):hover {
+    opacity: 0.75;
 }
 
 footer .developer {

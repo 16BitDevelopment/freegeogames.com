@@ -133,6 +133,10 @@ function createSearchResult(name) {
         href = "../../" + href;
         thumb = "../../" + thumb;
     }
+    if (window.location.href.indexOf("/privacy-policy") != -1) {
+        href = "../" + href;
+        thumb = "../" + thumb;
+    }
 
     allFavouriteGames.forEach((item) => {
         if (item == name) {

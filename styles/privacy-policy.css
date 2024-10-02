@@ -1,0 +1,52 @@
+main h1 {
+    font-size: 3.25rem;
+
+    margin-bottom: 10px;
+}
+
+main h2 {
+    font-size: 2rem;
+
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+main h3 {
+    font-size: 1.25rem;
+
+    margin-bottom: 40px;
+}
+
+main p {
+    font-size: 1.1rem;
+}
+
+main a {
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: all 0.25s;
+}
+
+main a:hover {
+    opacity: 0.5;
+}
+
+main ul {
+    list-style-position: inside;
+
+    margin-top: 25px;
+}
+
+main ul li {
+    margin-top: 15px;
+
+    font-size: 1.1rem;
+}
+
+@media (max-width: 800px) {
+    main {
+        text-align: center;
+    }
+}

@@ -158,7 +158,7 @@ function removeFavouriteGame(id) {
 function updateFavouriteGamesList() {
     favouriteGamesList.innerHTML = `
         <div class="empty-text">
-            <h1>Sorry, No Favourite Games Yet.</h1>
+            <h1>Favourite Games Will Appear Here</h1>
             <i class="fa-solid fa-cloud"></i>
         </div>
     `;

@@ -34,3 +34,8 @@ body {
 body.noscroll {
     overflow: hidden;
 }
+
+.adsense-ad {
+    display: flex;
+    justify-content: center;
+}

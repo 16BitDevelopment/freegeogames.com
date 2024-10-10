@@ -366,18 +366,13 @@ h1.subtitle {
     }
     main .game {
         translate: 0 -12.5%;
+        --game-bottom-height: 50px;
+        font-size: 100%;
     }
     main .description {
         position: static;
         width: 100%;
         font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 750px) {
-    main .game {
-        --game-bottom-height: 50px;
-        font-size: 100%;
     }
 }
 

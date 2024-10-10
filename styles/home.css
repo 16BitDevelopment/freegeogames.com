@@ -174,7 +174,7 @@ main h1.subtitle {
 }
 
 main .other-games {
-    margin-top: 50px;
+    margin: 50px 0;
 
     display: flex;
     justify-content:  center;

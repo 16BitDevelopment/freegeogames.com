@@ -238,6 +238,8 @@ h1.subtitle {
     justify-content:  center;
     gap: 50px;
     flex-wrap: wrap;
+
+    margin-bottom: 50px;
 }
 
 .other-games .game {

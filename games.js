@@ -7,7 +7,7 @@ const gamesContainers = document.getElementsByClassName("other-games");
 if (gamesContainers != null) {
     otherGames = Array.from(games);
     Array.from(gamesContainers).forEach(container => {
-        for (let gameIdx = 0; gameIdx < parseInt(container.getAttribute("data-amount")); gameIdx += 1) {
+        for (let gameIdx = 0; gameIdx < 4; gameIdx += 1) {
             var game = otherGames[Math.floor(Math.random() * otherGames.length)];
             if (otherGames.length < 1) {
                 break;

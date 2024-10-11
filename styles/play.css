@@ -92,7 +92,7 @@ main .game .load-screen .rotate {
 }
 
 main .game .load-screen .dots .dot {
-    height: 20px;
+    height: 1em;
     aspect-ratio: 1;
     background-color: var(--colour2);
     border-radius: 9999px;
@@ -158,6 +158,9 @@ main .game .game-bottom .btn:hover {
 
 main .game .game-bottom h1 {
     text-transform: uppercase;
+
+    text-wrap: nowrap;
+    text-align: center;
 }
 
 main .description {
@@ -354,6 +357,11 @@ h1.subtitle {
 }
 
 @media (max-width: 900px) {
+    main .game {
+        --game-bottom-height: 50px;
+        font-size: 100%;
+    }
+
     main .description {
         font-size: 0.5rem;
     }
@@ -363,11 +371,11 @@ h1.subtitle {
     main {
         display: block;
     }
+
     main .game {
         translate: 0 -12.5%;
-        --game-bottom-height: 50px;
-        font-size: 100%;
     }
+
     main .description {
         position: static;
         width: 100%;

@@ -119,6 +119,7 @@ main .top .top-content-container .games .game a {
 
     text-decoration: none;
     text-transform: uppercase;
+    text-wrap: nowrap;
     font-size: 1.75rem;
     text-wrap: nowrap;
     padding: 0.5em 1em;

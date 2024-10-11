@@ -18,7 +18,7 @@ if (gamesContainer != null) {
             continue;
         }
         gamesContainer.append(createGame(game));
-        gamesContainerinnerHTML += `
+        gamesContainer.innerHTML += `
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2233163633619834" crossorigin="anonymous"></script>
         <!-- Square Responsive -->
         <ins class="adsbygoogle"

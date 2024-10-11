@@ -8,10 +8,10 @@ if (gamesContainers != null) {
     otherGames = Array.from(games);
 
     let containerAmount = 4;
-    if (window.location.href.indexOf("/play") == 1) {
+    if (window.location.href.indexOf("/play") == -1) {
         containerAmount = 8;
     }
-    
+
     Array.from(gamesContainers).forEach(container => {
         for (let gameIdx = 0; gameIdx < containerAmount; gameIdx += 1) {
             var game = otherGames[Math.floor(Math.random() * otherGames.length)];

@@ -241,8 +241,8 @@ h1.subtitle {
     justify-content:  center;
     gap: 50px;
     flex-wrap: wrap;
-
-    margin-bottom: 50px;
+    
+    margin: 50px 0;
 }
 
 .other-games .game {

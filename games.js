@@ -18,34 +18,6 @@ if (gamesContainer != null) {
             continue;
         }
         gamesContainer.append(createGame(game));
-        gamesContainer.innerHTML += `
-        <script type="text/javascript">
-            google_ad_client = "ca-pub-2233163633619834";
-            google_ad_slot = "1234567890";
-            google_ad_width = 728;
-            google_ad_height = 90;
-        </script>
-        <!-- leaderboard -->
-        <script type="text/javascript"
-            src="https://pagead2.googlesyndication.com/
-            pagead/show_ads.js">
-        </script>
-        `;
-
-        /*
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2233163633619834" crossorigin="anonymous"></script>
-        <!-- Square Responsive -->
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-2233163633619834"
-            data-ad-slot="1596083545"
-            data-ad-format="auto"
-            data-full-width-responsive="true">
-        </ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        */
     }
 }
 

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2TPD8L6XX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-V2TPD8L6XX');
+        </script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Geo Quiz | Free Geo Games</title>
+
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.png">
+
+        <script src="https://kit.fontawesome.com/9055024f82.js" crossorigin="anonymous"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2233163633619834" crossorigin="anonymous"></script>
+
+        <script async src="https://fundingchoicesmessages.google.com/i/pub-2233163633619834?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+        <link rel="stylesheet" href="../../styles/general.css">
+        <link rel="stylesheet" href="../../styles/nav.css">
+        <link rel="stylesheet" href="../../styles/play.css">
+        <link rel="stylesheet" href="../../styles/footer.css">
+
+        <script src="../../navbar.js" defer></script>
+        <script src="../../play.js" defer></script>
+        <script src="../../games.js" defer></script>
+    </head>
+    <body>
+        <input type="checkbox" id="hamburger-toggle">
+        <nav>
+            <div class="black-overlay" id="black-overlay"></div>
+            <div class="logo">
+                <a href="../../">
+                    <img src="../../images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="search">
+                <div class="search-bar">
+                    <input type="text" id="search-bar" placeholder="Search" autocomplete="off">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="search-results">
+                <div class="search-contents" id="search-results">
+                    <div class="no-results">
+                        <h1>No Results</h1>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <!--<a class="game" href="#">
+                        <div class="thumb">
+                            <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                        </div>
+                        <div class="text">
+                            <h1>Globle</h1>
+                            <p>&#183; In Favourites</p>
+                        </div>
+                    </a>-->
+                </div>
+            </div>
+            <div class="nav-buttons" id="nav-btns">
+                <div class="favourites-btn" onclick="openTab('favourites', this)">
+                    <i class="fa-regular fa-heart"></i>
+                    <div class="notification-dot" id="favourites-notification"></div>
+                </div>
+                <div class="notification-btn" id="notifications-btn" onclick="openTab('notifications', this)">
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="notification-dot" id="notifications-notification"></div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <label for="hamburger-toggle" class="hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <label for="hamburger-toggle" class="x-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="favourites box" id="favourites">
+                <div class="box-header">
+                    <h1>Favourites</h1>
+                    <i class="fa-solid fa-xmark" onclick="closeTab('favourites')"></i>
+                </div>
+                <div class="favourite-games list empty" id="favourite-games"></div>
+            </div>
+            <div class="notifications box" id="notifications">
+                <div class="box-header">
+                    <h1>Notifications</h1>
+                    <i class="fa-solid fa-xmark" onclick="closeTab('notifications')"></i>
+                </div>
+                <div class="list" id="notifications-items"></div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="game" id="active-game">
+                <iframe id="game" src="https://thegeoquiz.com/" frameborder="0" onload="gameLoaded()"></iframe>
+                <div class="load-screen" id="load-screen">
+                    <h1>LOADING</h1>
+                    <div class="dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <img src="../../images/rotate-phone.png" alt="Rotate Phone" class="rotate">
+                </div>
+                <div class="game-bottom">
+                    <div class="favourite btn" id="favourite-btn" data-href="flagle"  onclick="addFavouriteGame()">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <h1>Geo Quiz</h1>
+                    <div class="fullscreen btn" onclick="fullscreen()">
+                        <i class="fa-solid fa-maximize" id="fullscreen"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <h1>Geo Quiz</h1>
+                <p>TheGeoQuiz.com is a fun and educational geography quiz game where players test their knowledge of the world. Each quiz presents questions about countries, capitals, landmarks, and more, challenging players to answer correctly and earn points. With varying difficulty levels, it's perfect for anyone looking to sharpen their geography skills while having fun!</p>
+                <h2>Creator:</h2>
+                <a href="https://www.instagram.com/thegeoquiz/" target="_blank" data-creator="The Geo Quiz">The Geo Quiz</a>
+            </div>
+        </main>
+
+        <div align="center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2233163633619834" crossorigin="anonymous"></script>
+            <!-- Horizontal Responsive -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2233163633619834"
+                data-ad-slot="6926832662"
+                data-ad-format="auto"
+                data-full-width-responsive="true">
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <h1 class="subtitle">Other Games</h1>
+        <div class="other-games">
+            <!--<div class="game">
+                <div class="thumb">
+                    <a href="../globle/">
+                        <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                    </a>
+                </div>
+                <div class="text">
+                    <h1>Globle</h1>
+                </div>
+            </div>-->
+        </div>
+
+        <div align="center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2233163633619834" crossorigin="anonymous"></script>
+            <!-- Horizontal Responsive -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2233163633619834"
+                data-ad-slot="6926832662"
+                data-ad-format="auto"
+                data-full-width-responsive="true">
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="other-games">
+            <!--<div class="game">
+                <div class="thumb">
+                    <a href="../globle/">
+                        <img src="../../thumbnails/globle.png" alt="Thumbnail">
+                    </a>
+                </div>
+                <div class="text">
+                    <h1>Globle</h1>
+                </div>
+            </div>-->
+        </div>
+
+        <div align="center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2233163633619834" crossorigin="anonymous"></script>
+            <!-- Horizontal Responsive -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2233163633619834"
+                data-ad-slot="6926832662"
+                data-ad-format="auto"
+                data-full-width-responsive="true">
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <img src="../../images/logo.png" alt="Logo" class="logo">
+            <p class="info">Welcome to FreeGeoGames.com! Explore a vibrant collection of fun geography games that challenge your knowledge and skills. From guessing countries and capitals to identifying flags and landmarks, our engaging puzzles and quizzes offer something for everyone. Perfect for players of all ages, our site makes learning geography an exciting adventure.</p>
+            <a href="../../privacy-policy/">Privacy Policy</a>
+            <div class="developer">
+                <h1>Developer</h1>
+                <a href="https://16bitdevelopment.com" target="_blank">16 Bit Development</a>
+            </div>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61559303773751" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/16bitdevelopment/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/16bitdevelopmen" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/16BitDevelopment" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <h1 class="copyright">&copy; Free Geo Games 2024</h1>
+        </footer>
+    </body>
+</html>

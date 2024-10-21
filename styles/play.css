@@ -39,7 +39,7 @@ main .game.fullscreen {
 }
 
 main .game .top-ad {
-    width: 100%;
+    width: 200px;
     height: 200px;
 
     display: none;
@@ -56,6 +56,7 @@ main .game.fullscreen .game-bottom {
 }
 
 main .game iframe {
+    --ad-height: 0px;
     position: absolute;
     width: 100%;
     height: calc(100% - var(--game-bottom-height));

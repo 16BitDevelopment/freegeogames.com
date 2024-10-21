@@ -60,7 +60,7 @@ main .game iframe {
     position: absolute;
     width: 100%;
     height: calc(100% - var(--game-bottom-height));
-    translate: -150px;
+    translate: 0 -150px;
 
     border-radius: 20px 20px 0 0;
 }

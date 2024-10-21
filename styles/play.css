@@ -41,13 +41,12 @@ main .game.fullscreen {
 main .game .top-ad {
     width: auto;
     height: 200px;
-    background-color: red;
 
-    display: block;
+    margin-bottom: -200px;
 }
 
 main .game.fullscreen .top-ad {
-    display: block;
+    margin-bottom: 0;
 }
 
 main .game.fullscreen iframe,
@@ -66,7 +65,7 @@ main .game iframe {
 }
 
 main .game.fullscreen iframe {
-    height: calc(100% - var(--game-bottom-height) - var(--ad-height));
+    height: calc(100% - var(--game-bottom-height) - 200px);
 }
 
 main .game .load-screen {

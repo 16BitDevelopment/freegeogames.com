@@ -42,7 +42,7 @@ main .game .top-ad {
     width: 200px;
     height: 200px;
 
-    display: none;
+    display: block;
 }
 
 main .game.fullscreen .top-ad {

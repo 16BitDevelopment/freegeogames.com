@@ -58,14 +58,18 @@ main .game.fullscreen .game-bottom {
 main .game iframe {
     position: absolute;
     width: 100%;
-    height: calc(100% - var(--game-bottom-height) - var(--ad-height));
+    height: calc(100% - var(--game-bottom-height));
 
     border-radius: 20px 20px 0 0;
 }
 
+main .game.fullscreen iframe {
+    height: calc(100% - var(--game-bottom-height) - var(--ad-height));
+}
+
 main .game .load-screen {
     position: absolute;
-    top: var(--ad-height);
+    top: 0;
     height: 100%;
     width: 100%;
 

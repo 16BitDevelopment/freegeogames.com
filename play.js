@@ -13,7 +13,7 @@ if (window.location.href.indexOf("/play") != -1) {
     }
     
     waitForElement("#aswift_1", () => {
-        document.body.style.setProperty("--ad-height", `${document.getElementById("aswift_1").offsetHeight}px`);
+        gameIframe.style.setProperty("--ad-height", `${document.getElementById("aswift_1").offsetHeight}px`);
     });
 }
 

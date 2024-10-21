@@ -40,7 +40,7 @@ main .game.fullscreen {
 
 main .game .top-ad {
     width: auto;
-    height: auto;
+    height: 60px;
 
     opacity: 0;
 }

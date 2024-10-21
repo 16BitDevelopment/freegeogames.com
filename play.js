@@ -3,11 +3,25 @@ const activeGame = document.getElementById("active-game");
 const fullscreenIcon = document.getElementById("fullscreen");
 const gameIframe = document.getElementById("game");
 
-document.addEventListener("fullscreenchange", updateFullscreen);
+if (window.location.href.indexOf("/play") != -1) {
+    function waitForElement(selector, callback) {
+        if (document.querySelector(selector)) {
+          callback();
+        } else {
+          setTimeout(() => waitForElement(selector, callback), 500);
+        }
+    }
+    
+    waitForElement("#aswift_1", () => {
+        document.body.style.setProperty("--ad-height", `${document.getElementById("aswift_1").offsetHeight}px`);
+    });
+}
 
 function gameLoaded() {
     loadingScreen.classList.add("loaded");
 }
+
+document.addEventListener("fullscreenchange", updateFullscreen);
 
 function fullscreen() {
     if (document.fullscreenElement) {

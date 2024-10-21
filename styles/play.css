@@ -40,7 +40,7 @@ main .game.fullscreen {
 
 main .game .top-ad {
     width: auto;
-    height: 150px;
+    max-height: 150px;
 
     opacity: 0;
 }
@@ -49,7 +49,6 @@ main .game.fullscreen .top-ad {
     opacity: 1;
 }
 
-main .game.fullscreen iframe,
 main .game.fullscreen .load-screen,
 main .game.fullscreen .game-bottom {
     border-radius: unset;
@@ -61,12 +60,10 @@ main .game iframe {
     width: 100%;
     height: calc(100% - var(--game-bottom-height));
     translate: 0 -150px;
-
-    border-radius: 20px 20px 0 0;
 }
 
 main .game.fullscreen iframe {
-    height: calc(100% - var(--game-bottom-height) - 200px);
+    height: calc(100% - var(--game-bottom-height) - 100px);
     translate: 0;
 }
 

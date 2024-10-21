@@ -39,8 +39,9 @@ main .game.fullscreen {
 }
 
 main .game .top-ad {
-    width: 200px;
+    width: auto;
     height: 200px;
+    background-color: red;
 
     display: block;
 }

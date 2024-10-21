@@ -41,14 +41,12 @@ main .game.fullscreen {
 main .game .top-ad {
     width: auto;
     height: 100px;
-    position: absolute;
 
     opacity: 0;
 }
 
 main .game.fullscreen .top-ad {
     opacity: 1;
-    position: static;
 }
 
 main .game.fullscreen .load-screen,
@@ -64,7 +62,7 @@ main .game iframe {
 }
 
 main .game.fullscreen iframe {
-    height: calc(100% - var(--game-bottom-height) - 100px);
+    min-height: calc(100% - var(--game-bottom-height));
 }
 
 main .game .load-screen {

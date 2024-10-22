@@ -1,4 +1,4 @@
-let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele", "globle-capitals", "geoguessr", "geo-quiz"];
+let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele", "globle-capitals", "geoguessr", "geo-quiz", "where-taken"];
 
 // load games
 

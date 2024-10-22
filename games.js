@@ -1,4 +1,4 @@
-let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele", "globle-capitals", "geoguessr", "geo-quiz", "where-taken"];
+let games = ["globle", "tradle", "travle", "flagle", "worldle", "statele", "globle-capitals", "geoguessr", "geo-quiz", "where-taken", "geo-grid"];
 
 // load games
 
@@ -9,7 +9,7 @@ if (gamesContainers != null) {
 
     let containerAmount = 4;
     if (window.location.href.indexOf("/play") == -1) {
-        containerAmount = 8;
+        containerAmount = games.length;
     }
 
     Array.from(gamesContainers).forEach(container => {

@@ -7,7 +7,7 @@ const gamesContainers = document.getElementsByClassName("other-games");
 if (gamesContainers != null) {
     otherGames = Array.from(games);
 
-    let containerAmount = 4;
+    let containerAmount = 5;
     if (window.location.href.indexOf("/play") == -1) {
         containerAmount = games.length;
     }

@@ -11,6 +11,8 @@ main .game {
 
     background-color: var(--colour1);
 
+    border-radius: 20px 20px 10px 10px;
+
     --game-bottom-height: 75px;
 
     font-size: 25px;
@@ -25,6 +27,8 @@ main .game {
 
 main .game.fullscreen {
     aspect-ratio: unset;
+
+    border-radius: unset;
 
     scale: 1;
 

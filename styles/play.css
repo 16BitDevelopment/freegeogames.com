@@ -68,7 +68,7 @@ main .game iframe {
 
 main .game.fullscreen iframe {
     top: unset;
-    height: calc(100% - 60px var(--game-bottom-height));
+    height: calc(100% - 60px - var(--game-bottom-height));
     border-radius: unset;
 }
 

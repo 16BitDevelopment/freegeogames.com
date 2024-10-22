@@ -68,6 +68,7 @@ main .top .top-content-container .arrow-btns .arrow {
     outline: none;
 
     pointer-events: all;
+    cursor: pointer;
 
     transition: all 0.25s;
 }

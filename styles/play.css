@@ -11,8 +11,6 @@ main .game {
 
     background-color: var(--colour1);
 
-    border-radius: 20px 20px 10px 10px;
-
     --game-bottom-height: 75px;
 
     font-size: 25px;
@@ -41,7 +39,7 @@ main .game.fullscreen {
 main .game .top-ad {
     width: auto;
 
-    height: 100px;
+    height: 60px;
 
     opacity: 0;
 }

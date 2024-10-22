@@ -39,11 +39,9 @@ main .game.fullscreen {
 }
 
 main .game .top-ad {
-    min-width: 250px;
-    max-width: 1200px;
     width: auto;
 
-    height: 90px;
+    height: 100px;
 
     opacity: 0;
 }

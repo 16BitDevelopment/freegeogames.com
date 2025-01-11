@@ -1,4 +1,4 @@
-// tabs
+// Tabs
 
 const navTabs = document.getElementsByClassName("box");
 const blackOverlay = document.getElementById("black-overlay");
@@ -242,3 +242,10 @@ function createItem(itemInfo) {
     `;
     return item;
 }
+
+// Copyright
+
+const copyrightEl = document.getElementById("date");
+
+const d = new Date();
+copyrightEl.innerHTML = d.getFullYear();
